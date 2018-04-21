@@ -1,0 +1,19 @@
+﻿body {
+    padding-top: 80px;
+    padding-bottom: 20px;
+    background-color: #f5f5f5;
+}
+
+
+/*
+    Login and register Views
+*/
+
+.loginView {
+    margin: auto;
+    max-width: 330px;
+}
+
+.loginView input[type=text]{
+    margin: 5px 0px;
+}

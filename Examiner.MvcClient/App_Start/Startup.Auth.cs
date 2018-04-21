@@ -2,6 +2,7 @@
 using Autofac.Integration.Mvc;
 using Examiner.Core.DomainModels;
 using Examiner.Infrastructure.Data;
+using Examiner.MvcClient.IdentityServices;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -26,11 +27,11 @@ namespace Examiner.MvcClient
 
             // REGISTER DEPENDENCIES
             builder.RegisterType<ExaminerDBContext>().AsSelf().InstancePerRequest();
-            builder.RegisterType<UserStore<ApplicationUser>>().As<IUserStore<ApplicationUser>>().InstancePerRequest();
+            builder.RegisterType<ApplicationUserStore>().As<IUserStore<ApplicationUser>>().InstancePerRequest();
             builder.RegisterType<RoleStore<IdentityRole>>().As<IRoleStore<IdentityRole, string>>().InstancePerRequest();
             builder.RegisterType<RoleManager<IdentityRole>>().AsSelf().InstancePerRequest();
-            builder.RegisterType<UserManager<ApplicationUser>>().AsSelf().InstancePerRequest();
-            builder.RegisterType<SignInManager<ApplicationUser, string>>().AsSelf().InstancePerRequest();
+            builder.RegisterType<ApplicationUserManager>().AsSelf().InstancePerRequest();
+            builder.RegisterType<ApplicationSignInManager>().AsSelf().InstancePerRequest();
             builder.Register<IAuthenticationManager>(c => HttpContext.Current.GetOwinContext().Authentication).InstancePerRequest();
 
             // REGISTER CONTROLLERS SO DEPENDENCIES ARE CONSTRUCTOR INJECTED

@@ -1,0 +1,32 @@
+﻿@model Examiner.MvcClient.Models.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+}
+
+
+
+<div class="row loginView">
+    <div class="col border border-secondary rounded">
+        @using(Html.BeginForm("Login", "Account", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <h3 class="text-center my-3">Please log in</h3>
+            <div class="form-group">
+                @Html.LabelFor(p => p.Email, new { @class = "sr-only" })
+                @Html.TextBoxFor(p => p.Email, new { placeholder="Email address", @class="form-control" })
+                @Html.ValidationMessageFor(p => p.Email, null, new { @class="text-danger"})
+
+                @Html.LabelFor(p => p.Password, new { @class="sr-only"})
+                @Html.PasswordFor(p => p.Password, new { placeholder="Password", @class="form-control"})
+                @Html.ValidationMessageFor(p => p.Password, null, new { @class="text-danger"})
+            </div>
+            <div class="form-check text-center">
+                @Html.CheckBoxFor(p => p.RememberMe, new { @class = "form-check-input" })
+                @Html.LabelFor(p => p.RememberMe, new { @class = "form-check-label" })
+            </div>
+
+            <input type="submit" value="Log in" class="btn btn-outline-primary btn-block my-3"/>
+        }
+    </div>
+</div>

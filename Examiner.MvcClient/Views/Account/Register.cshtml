@@ -1,0 +1,31 @@
+﻿@model Examiner.MvcClient.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+<div class="row loginView">
+    <div class="col border border-secondary rounded">
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <h1 class="text-center my-3">Register</h1>
+            <div class="form-group">
+                @Html.LabelFor(p => p.Email, new { @class = "sr-only" })
+                @Html.TextBoxFor(p => p.Email, new { placeholder = "Email address", @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Email, null, new { @class = "text-danger" })
+
+                @Html.LabelFor(p => p.Password, new { @class = "sr-only" })
+                @Html.PasswordFor(p => p.Password, new { placeholder = "Password", @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.Password, null, new { @class = "text-danger" })
+
+                @Html.LabelFor(p => p.ConfirmPassword, new { @class = "sr-only" })
+                @Html.PasswordFor(p => p.ConfirmPassword, new { placeholder = "Password confirmation", @class = "form-control" })
+                @Html.ValidationMessageFor(p => p.ConfirmPassword, null, new { @class = "text-danger" })
+
+                <input type="submit" value="Register" class="btn btn-outline-primary btn-block my-3" />
+            </div>
+        }
+    </div>
+</div>
+
+
