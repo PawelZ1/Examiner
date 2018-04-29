@@ -11,6 +11,10 @@ namespace Examiner.Core.DomainModels
 {
     public class ApplicationUser : IdentityUser
     {
+
+        public virtual ICollection<Test> Tests { get; private set; }
+        public virtual ICollection<Question> Questions { get; private set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one 

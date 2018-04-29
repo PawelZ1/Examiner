@@ -74,7 +74,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DomainModels\Answer.cs" />
     <Compile Include="DomainModels\ApplicationUser.cs" />
+    <Compile Include="DomainModels\Question.cs" />
+    <Compile Include="DomainModels\Test.cs" />
+    <Compile Include="Interfaces\IAnswerRepository.cs" />
+    <Compile Include="Interfaces\IQuestionRepository.cs" />
+    <Compile Include="Interfaces\ITestRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

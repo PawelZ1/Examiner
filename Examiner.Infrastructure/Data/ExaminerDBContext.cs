@@ -9,6 +9,10 @@ namespace Examiner.Infrastructure.Data
 
     public partial class ExaminerDBContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Test> Tests { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<Answer> Answers { get; set; }
+
         public ExaminerDBContext()
             : base("name=ExaminerDBContext")
         {

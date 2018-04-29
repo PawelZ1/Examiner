@@ -241,6 +241,13 @@ C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\obj\Debug\Examiner.UnitT
 C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\obj\Debug\Examiner.UnitTests.csproj.CopyComplete
 C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\obj\Debug\Examiner.UnitTests.dll
 C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\obj\Debug\Examiner.UnitTests.pdb
-C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\bin\Debug\Examiner.UnitTests.dll.CodeAnalysisLog.xml
-C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\bin\Debug\Examiner.UnitTests.dll.lastcodeanalysissucceeded
 C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\obj\Debug\Examiner.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\bin\Debug\Examiner.Core.dll
+C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\bin\Debug\EntityFramework.dll
+C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\bin\Debug\Examiner.Core.pdb
+C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\bin\Debug\Examiner.Core.dll.config
+C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\bin\Debug\EntityFramework.xml
