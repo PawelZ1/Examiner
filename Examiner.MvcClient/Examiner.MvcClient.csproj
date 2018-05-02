@@ -217,6 +217,10 @@
     <Compile Include="IdentityServices\ApplicationSignInManager.cs" />
     <Compile Include="IdentityServices\ApplicationUserStore.cs" />
     <Compile Include="Models\AcccountViewModels.cs" />
+    <Compile Include="Modules\DBModule.cs" />
+    <Compile Include="Modules\IdentityModule.cs" />
+    <Compile Include="Modules\RepositoriesModule.cs" />
+    <Compile Include="Modules\ServicesModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
