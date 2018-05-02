@@ -56,6 +56,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\ExaminerDBContext.cs" />
+    <Compile Include="DTOs\AnswerDTO.cs" />
+    <Compile Include="DTOs\QuestionDTO.cs" />
+    <Compile Include="DTOs\TestDTO.cs" />
     <Compile Include="Migrations\201804162030015_Initial migration.cs" />
     <Compile Include="Migrations\201804162030015_Initial migration.Designer.cs">
       <DependentUpon>201804162030015_Initial migration.cs</DependentUpon>

@@ -20,7 +20,7 @@ namespace Examiner.Core.DomainModels
 
         public Test(Guid id, string name, string category, string userId)
         {
-            Id = id;
+            TestId = id;
             SetName(name);
             SetCategory(category);
             UserId = userId;
