@@ -40,3 +40,4 @@ C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.
 C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.Infrastructure.csproj.CopyComplete
 C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.Infrastructure.dll
 C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.Infrastructure.pdb
+C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.Infrastructure.Migrations.Domainmodels.resources
