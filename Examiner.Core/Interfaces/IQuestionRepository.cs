@@ -13,6 +13,6 @@ namespace Examiner.Core.Interfaces
         Task<Question> GetAsync(Guid questionId);
         Task<IEnumerable<Question>> GetAllForUserAsync(string userId);
         Task UpdateAsync(Question question);
-        Task DeleteAsync(Guid questionId);
+        Task DeleteAsync(Question question);
     }
 }

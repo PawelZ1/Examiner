@@ -25,10 +25,9 @@ namespace Examiner.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(Guid testId)
+        public async Task DeleteAsync(Test test)
         {
-            Test testToRemove = await _context.Tests.SingleOrDefaultAsync(p => p.TestId == testId);
-            _context.Tests.Remove(testToRemove);
+            _context.Tests.Remove(test);
             await _context.SaveChangesAsync();
         }
 

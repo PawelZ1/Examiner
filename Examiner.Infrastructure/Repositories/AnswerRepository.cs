@@ -25,10 +25,9 @@ namespace Examiner.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(Guid answerId)
+        public async Task DeleteAsync(Answer answer)
         {
-            Answer answerToDelete = await _context.Answers.SingleOrDefaultAsync(p => p.AnswerId == answerId);
-            _context.Answers.Remove(answerToDelete);
+            _context.Answers.Remove(answer);
             await _context.SaveChangesAsync();
         }
 
