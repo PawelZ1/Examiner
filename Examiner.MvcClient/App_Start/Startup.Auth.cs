@@ -27,7 +27,6 @@ namespace Examiner.MvcClient
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterInstance(AutoMapperConfig.Initialize()).SingleInstance();
             builder.RegisterModule<IdentityModule>();
             builder.RegisterModule<DBModule>();
             builder.RegisterModule<RepositoriesModule>();

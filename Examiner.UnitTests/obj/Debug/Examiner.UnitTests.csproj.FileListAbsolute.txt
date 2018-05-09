@@ -251,3 +251,5 @@ C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\bin\Debug\Examiner.Core.
 C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\bin\Debug\EntityFramework.xml
+C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\bin\Debug\AutoMapper.dll
+C:\Users\pawel\source\repos\Examiner\Examiner.UnitTests\bin\Debug\AutoMapper.xml

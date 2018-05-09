@@ -41,3 +41,5 @@ C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.
 C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.Infrastructure.dll
 C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.Infrastructure.pdb
 C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.Infrastructure.Migrations.Domainmodels.resources
+C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\bin\Debug\AutoMapper.dll
+C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\bin\Debug\AutoMapper.xml
