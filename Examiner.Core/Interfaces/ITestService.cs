@@ -11,6 +11,7 @@ namespace Examiner.Core.Interfaces
     {
         Task AddTestAsync(TestDTO test);
         Task<TestDTO> GetTestAsync(Guid testId);
+        Task<IEnumerable<TestDTO>> GetAllTests();
         Task<IEnumerable<TestDTO>> GetUserTestsAsync(string userId);
         Task DeleteTestAsync(Guid testId);
     }

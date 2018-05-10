@@ -232,3 +232,4 @@ C:\Users\pawel\source\repos\Examiner\Examiner.MvcClient\obj\Debug\Examiner.MvcCl
 C:\Users\pawel\source\repos\Examiner\Examiner.MvcClient\bin\roslyn\Microsoft.Managed.Core.targets
 C:\Users\pawel\source\repos\Examiner\Examiner.MvcClient\bin\AutoMapper.dll
 C:\Users\pawel\source\repos\Examiner\Examiner.MvcClient\bin\AutoMapper.xml
+C:\Users\pawel\source\repos\Examiner\Examiner.MvcClient\obj\Debug\Examiner.MvcClient.csprojAssemblyReference.cache

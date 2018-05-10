@@ -43,6 +43,13 @@ namespace Examiner.Core.Services
             await _repository.DeleteAsync(answerToDelete);
         }
 
+        public async Task<IEnumerable<AnswerDTO>> GetAllAnswers()
+        {
+            IEnumerable<Answer> answers = await _repository.GetAll();
+
+            return _mapper.Map<IEnumerable<Answer>, IEnumerable<AnswerDTO>>(answers);
+        }
+
         public async Task<AnswerDTO> GetAnswerAsync(Guid answerId)
         {
             Answer answer = await _repository.GetAsync(answerId);

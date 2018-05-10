@@ -43,6 +43,13 @@ namespace Examiner.Core.Services
             await _repository.DeleteAsync(testToRemove);
         }
 
+        public async Task<IEnumerable<TestDTO>> GetAllTests()
+        {
+            IEnumerable<Test> tests = await _repository.GetAll();
+
+            return _mapper.Map<IEnumerable<Test>, IEnumerable<TestDTO>>(tests);
+        }
+
         public async Task<TestDTO> GetTestAsync(Guid testId)
         {
             Test test = await _repository.GetAsync(testId);

@@ -67,6 +67,9 @@
     <Compile Include="DomainModels\QuestionTests.cs" />
     <Compile Include="DomainModels\TestTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AnswerServiceTests.cs" />
+    <Compile Include="Services\QuestionServiceTests.cs" />
+    <Compile Include="Services\TestServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
