@@ -31,11 +31,6 @@ namespace Examiner.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Question>> GetAll()
-        {
-            return await _context.Questions.ToListAsync();
-        }
-
         public async Task<IEnumerable<Question>> GetAllForUserAsync(string userId)
         {
             return await _context.Questions.Where(p => p.UserId == userId).ToListAsync();

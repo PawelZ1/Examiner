@@ -30,7 +30,7 @@ namespace Examiner.Core.Services
             if (questionToAdd != null)
                 throw new ArgumentException("Question with given id already exists");
 
-            questionToAdd = new Question(question.QuestionId, question.QuestionContent, question.UserId);
+            questionToAdd = _mapper.Map<QuestionDTO, Question>(question);
             await _repository.AddAsync(questionToAdd);
         }
 
@@ -43,13 +43,6 @@ namespace Examiner.Core.Services
             await _repository.DeleteAsync(questionToDelete);
         }
 
-        public async Task<IEnumerable<QuestionDTO>> GetAllQuestions()
-        {
-            IEnumerable<Question> questions = await _repository.GetAll();
-
-            return _mapper.Map<IEnumerable<Question>, IEnumerable<QuestionDTO>>(questions);
-        }
-
         public async Task<QuestionDTO> GetQuestionAsync(Guid questionId)
         {
             Question question = await _repository.GetAsync(questionId);
@@ -59,6 +52,9 @@ namespace Examiner.Core.Services
 
         public async Task<IEnumerable<QuestionDTO>> GetUserQuestionsAsync(string userId)
         {
+            if (string.IsNullOrWhiteSpace(userId))
+                throw new ArgumentNullException("Given userId cannot be null");
+
             IEnumerable<Question> questions = await _repository.GetAllForUserAsync(userId);
 
             return _mapper.Map<IEnumerable<Question>, IEnumerable<QuestionDTO>>(questions);

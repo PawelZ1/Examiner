@@ -224,7 +224,6 @@ C:\Users\pawel\source\repos\Examiner\Examiner.MvcClient\bin\pl\System.Web.Razor.
 C:\Users\pawel\source\repos\Examiner\Examiner.MvcClient\bin\pl\System.Web.WebPages.resources.dll
 C:\Users\pawel\source\repos\Examiner\Examiner.MvcClient\bin\pl\System.Web.WebPages.Deployment.resources.dll
 C:\Users\pawel\source\repos\Examiner\Examiner.MvcClient\bin\pl\System.Web.WebPages.Razor.resources.dll
-C:\Users\pawel\source\repos\Examiner\Examiner.MvcClient\obj\Debug\Examiner.MvcClient.csprojResolveAssemblyReference.cache
 C:\Users\pawel\source\repos\Examiner\Examiner.MvcClient\obj\Debug\Examiner.MvcClient.csproj.CoreCompileInputs.cache
 C:\Users\pawel\source\repos\Examiner\Examiner.MvcClient\obj\Debug\Examiner.MvcClient.csproj.CopyComplete
 C:\Users\pawel\source\repos\Examiner\Examiner.MvcClient\obj\Debug\Examiner.MvcClient.dll

@@ -11,7 +11,6 @@ namespace Examiner.Core.Interfaces
     {
         Task AddAnswerAsync(AnswerDTO answer);
         Task<AnswerDTO> GetAnswerAsync(Guid answerId);
-        Task<IEnumerable<AnswerDTO>> GetAllAnswers();
         Task<IEnumerable<AnswerDTO>> GetQuestionAnswersAsync(Guid questionId);
         Task DeleteAnswerAsync(Guid answerId);
     }

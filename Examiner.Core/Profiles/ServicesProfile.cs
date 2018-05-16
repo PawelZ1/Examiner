@@ -14,8 +14,11 @@ namespace Examiner.Core.Profiles
         public ServicesProfile()
         {
             CreateMap<Test, TestDTO>();
+            CreateMap<TestDTO, Test>();
             CreateMap<Question, QuestionDTO>();
+            CreateMap<QuestionDTO, Question>();
             CreateMap<Answer, AnswerDTO>();
+            CreateMap<AnswerDTO, Answer>();
         }
     }
 }

@@ -30,7 +30,7 @@ namespace Examiner.Core.Services
             if (answerToAdd != null)
                 throw new ArgumentException("Answer with given id already exists");
 
-            answerToAdd = new Answer(answer.AnswerId, answer.AnswerContent, answer.IsCorrect, answer.QuestionId);
+            answerToAdd = _mapper.Map<AnswerDTO, Answer>(answer);
             await _repository.AddAsync(answerToAdd);
         }
 
@@ -41,13 +41,6 @@ namespace Examiner.Core.Services
                 throw new ArgumentException("Answer with given id does not exists");
 
             await _repository.DeleteAsync(answerToDelete);
-        }
-
-        public async Task<IEnumerable<AnswerDTO>> GetAllAnswers()
-        {
-            IEnumerable<Answer> answers = await _repository.GetAll();
-
-            return _mapper.Map<IEnumerable<Answer>, IEnumerable<AnswerDTO>>(answers);
         }
 
         public async Task<AnswerDTO> GetAnswerAsync(Guid answerId)

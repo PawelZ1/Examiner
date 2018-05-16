@@ -33,7 +33,6 @@ C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\bin\Debug\EntityFra
 C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.Infrastructure.csprojResolveAssemblyReference.cache
 C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.Infrastructure.Migrations.Initialmigration.resources
 C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.Infrastructure.csproj.GenerateResource.cache
 C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.Infrastructure.csproj.CoreCompileInputs.cache
@@ -43,3 +42,4 @@ C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.
 C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.Infrastructure.Migrations.Domainmodels.resources
 C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\bin\Debug\AutoMapper.dll
 C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\bin\Debug\AutoMapper.xml
+C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.Infrastructure.csprojAssemblyReference.cache

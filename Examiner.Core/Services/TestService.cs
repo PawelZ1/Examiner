@@ -30,7 +30,7 @@ namespace Examiner.Core.Services
             if (testToAdd != null)
                 throw new ArgumentException("Test with given id already exists");
 
-            testToAdd = new Test(test.TestId, test.Name, test.Category, test.UserId);
+            testToAdd = _mapper.Map<TestDTO, Test>(test);
             await _repository.AddAsync(testToAdd);
         }
 
@@ -43,13 +43,6 @@ namespace Examiner.Core.Services
             await _repository.DeleteAsync(testToRemove);
         }
 
-        public async Task<IEnumerable<TestDTO>> GetAllTests()
-        {
-            IEnumerable<Test> tests = await _repository.GetAll();
-
-            return _mapper.Map<IEnumerable<Test>, IEnumerable<TestDTO>>(tests);
-        }
-
         public async Task<TestDTO> GetTestAsync(Guid testId)
         {
             Test test = await _repository.GetAsync(testId);
@@ -59,6 +52,9 @@ namespace Examiner.Core.Services
 
         public async Task<IEnumerable<TestDTO>> GetUserTestsAsync(string userId)
         {
+            if (string.IsNullOrWhiteSpace(userId))
+                throw new ArgumentNullException("UserId cannot be null");
+
             IEnumerable<Test> tests = await _repository.GetAllForUserAsync(userId);
 
             return _mapper.Map<IEnumerable<Test>, IEnumerable<TestDTO>>(tests);
