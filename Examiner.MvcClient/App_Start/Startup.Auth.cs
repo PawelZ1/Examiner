@@ -2,7 +2,6 @@
 using Autofac.Integration.Mvc;
 using Examiner.Core.DomainModels;
 using Examiner.Infrastructure.Data;
-using Examiner.MvcClient.IdentityServices;
 using Examiner.MvcClient.Mapper;
 using Examiner.MvcClient.Modules;
 using Microsoft.AspNet.Identity;

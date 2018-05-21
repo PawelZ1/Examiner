@@ -1,6 +1,6 @@
 ﻿using Autofac;
 using Examiner.Core.DomainModels;
-using Examiner.MvcClient.IdentityServices;
+using Examiner.Infrastructure.IdentityServices;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;

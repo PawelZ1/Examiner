@@ -1,5 +1,5 @@
 ﻿using Examiner.Core.DomainModels;
-using Examiner.MvcClient.IdentityServices;
+using Examiner.Infrastructure.IdentityServices;
 using Examiner.MvcClient.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
