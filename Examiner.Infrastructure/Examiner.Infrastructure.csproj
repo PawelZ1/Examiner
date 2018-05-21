@@ -79,8 +79,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\ApplicationInitializer.cs" />
     <Compile Include="Data\ExaminerDBContext.cs" />
-    <Compile Include="Data\Initializer.cs" />
     <Compile Include="IdentityServices\ApplicationSignInManager.cs" />
     <Compile Include="IdentityServices\ApplicationUserManager.cs" />
     <Compile Include="IdentityServices\ApplicationUserStore.cs" />

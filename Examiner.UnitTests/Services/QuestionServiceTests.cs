@@ -39,12 +39,12 @@ namespace Examiner.UnitTests.Services
             //Arrange
             var repositoryMock = new Mock<IQuestionRepository>();
             var mapperMock = new Mock<IMapper>();
-            Guid questionGuid = new Guid();
+            Guid questionGuid = Guid.NewGuid();
             QuestionDTO questionDTO = new QuestionDTO
             {
                 QuestionId = questionGuid,
                 QuestionContent = "Sample content",
-                TestId = new Guid(),
+                TestId = Guid.NewGuid(),
                 UserId = "1111"
             };
 
@@ -62,12 +62,12 @@ namespace Examiner.UnitTests.Services
             //Arrange
             var repositoryMock = new Mock<IQuestionRepository>();
             var mapperMock = new Mock<IMapper>();
-            Guid questionGuid = new Guid();
+            Guid questionGuid = Guid.NewGuid();
             QuestionDTO questionDTO = new QuestionDTO
             {
                 QuestionId = questionGuid,
                 QuestionContent = "Sample content",
-                TestId = new Guid(),
+                TestId = Guid.NewGuid(),
                 UserId = "1111"
             };
             Question question = new Question(questionGuid, "Sample Content", "1111");
@@ -88,12 +88,12 @@ namespace Examiner.UnitTests.Services
             //Arrange
             var repositoryMock = new Mock<IQuestionRepository>();
             var mapperMock = new Mock<IMapper>();
-            Guid questionGuid = new Guid();
+            Guid questionGuid = Guid.NewGuid();
             QuestionDTO questionDTO = new QuestionDTO
             {
                 QuestionId = questionGuid,
                 QuestionContent = "Sample content",
-                TestId = new Guid(),
+                TestId = Guid.NewGuid(),
                 UserId = "1111"
             };
             Question question = new Question(questionGuid, "Sample Content", "1111");
@@ -113,12 +113,12 @@ namespace Examiner.UnitTests.Services
             //Arrange
             var repositoryMock = new Mock<IQuestionRepository>();
             var mapperMock = new Mock<IMapper>();
-            Guid questionGuid = new Guid();
+            Guid questionGuid = Guid.NewGuid();
             QuestionDTO questionDTO = new QuestionDTO
             {
                 QuestionId = questionGuid,
                 QuestionContent = "Sample content",
-                TestId = new Guid(),
+                TestId = Guid.NewGuid(),
                 UserId = "1111"
             };
             Question question = new Question(questionGuid, "Sample Content", "1111");
@@ -139,7 +139,7 @@ namespace Examiner.UnitTests.Services
             //Arrange
             var repositoryMock = new Mock<IQuestionRepository>();
             var mapperMock = new Mock<IMapper>();
-            Guid questionGuid = new Guid("f0d2b8c4-9b33-49f2-8b99-c4a8b5366db2");
+            Guid questionGuid = Guid.NewGuid();
             Question question = new Question(questionGuid, "Sample Content", "1111");
             repositoryMock.Setup(p => p.GetAsync(It.IsAny<Guid>())).ReturnsAsync(question);
 
@@ -164,7 +164,7 @@ namespace Examiner.UnitTests.Services
             var questionService = new QuestionService(repositoryMock.Object, mapperMock.Object);
 
             //Act
-            Func<Task> act = async () => await questionService.DeleteQuestionAsync(new Guid("f0d2b8c4-9b33-49f2-8b99-c4a8b5366db2"));
+            Func<Task> act = async () => await questionService.DeleteQuestionAsync(Guid.NewGuid());
 
             //Assert
             act.Should().Throw<ArgumentException>();
@@ -176,7 +176,7 @@ namespace Examiner.UnitTests.Services
             //Arrange
             var repositoryMock = new Mock<IQuestionRepository>();
             var mapperMock = new Mock<IMapper>();
-            Guid questionGuid = new Guid();
+            Guid questionGuid = Guid.NewGuid();
             Question question = new Question(questionGuid, "Sample Content", "1111");
             repositoryMock.Setup(p => p.GetAsync(It.IsAny<Guid>())).ReturnsAsync(question);
 
@@ -195,7 +195,7 @@ namespace Examiner.UnitTests.Services
             //Arrange
             var repositoryMock = new Mock<IQuestionRepository>();
             var mapperMock = new Mock<IMapper>();
-            Guid questionGuid = new Guid();
+            Guid questionGuid = Guid.NewGuid();
 
             var questionService = new QuestionService(repositoryMock.Object, mapperMock.Object);
 
@@ -212,7 +212,7 @@ namespace Examiner.UnitTests.Services
             //Arrange
             var repositoryMock = new Mock<IQuestionRepository>();
             var mapperMock = new Mock<IMapper>();
-            Guid questionGuid = new Guid();
+            Guid questionGuid = Guid.NewGuid();
             Question question = new Question(questionGuid, "Sample Content", "1111");
             repositoryMock.Setup(p => p.GetAsync(It.IsAny<Guid>())).ReturnsAsync(question);
 
@@ -265,8 +265,8 @@ namespace Examiner.UnitTests.Services
             string userId = "1111";
             IEnumerable<Question> questions = new List<Question>
             {
-                new Question(new Guid(), "Sample Content", "1111"),
-                new Question(new Guid(), "Sample Content", "1111"),
+                new Question(Guid.NewGuid(), "Sample Content", "1111"),
+                new Question(Guid.NewGuid(), "Sample Content", "1111"),
             };
             repositoryMock.Setup(p => p.GetAllForUserAsync(It.IsAny<string>())).ReturnsAsync(questions);
 

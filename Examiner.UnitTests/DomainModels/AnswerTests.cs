@@ -14,7 +14,7 @@ namespace Examiner.UnitTests.DomainModels
     {
         public Answer CreateAnswer()
         {
-            return new Answer(new Guid(), "Sample Content", true, new Guid());
+            return new Answer(Guid.NewGuid(), "Sample Content", true, Guid.NewGuid());
         }
 
         [Test]

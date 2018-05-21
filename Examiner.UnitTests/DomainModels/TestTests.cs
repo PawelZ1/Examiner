@@ -14,7 +14,7 @@ namespace Examiner.UnitTests.DomainModels
     {
         public Test CreateTest()
         {
-            return new Test(new Guid(), "SampleTest", "SampleCategory", "user1");
+            return new Test(Guid.NewGuid(), "SampleTest", "SampleCategory", "user1");
         }
 
         [Test]

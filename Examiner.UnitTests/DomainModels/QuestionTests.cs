@@ -14,7 +14,7 @@ namespace Examiner.UnitTests.DomainModels
     {
         public Question CreateQuestion()
         {
-            return new Question(new Guid(), "Sample Content", "user1");
+            return new Question(Guid.NewGuid(), "Sample Content", "user1");
         }
 
         [Test]
@@ -38,7 +38,7 @@ namespace Examiner.UnitTests.DomainModels
         [Test]
         public void SetTestId_GivenGuid_ChangesTestId()
         {
-            Guid newTestId = new Guid();
+            Guid newTestId = Guid.NewGuid();
             Question question = CreateQuestion();
 
             question.SetTestId(newTestId);

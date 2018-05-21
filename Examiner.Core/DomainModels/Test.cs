@@ -18,6 +18,8 @@ namespace Examiner.Core.DomainModels
         public virtual string UserId { get; private set; }
         public virtual ApplicationUser User { get; private set; }
 
+        private Test() { }
+
         public Test(Guid id, string name, string category, string userId)
         {
             TestId = id;

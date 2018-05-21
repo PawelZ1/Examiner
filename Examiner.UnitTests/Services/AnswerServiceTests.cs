@@ -39,7 +39,7 @@ namespace Examiner.UnitTests.Services
             //Arrange
             var repositoryMock = new Mock<IAnswerRepository>();
             var mapperMock = new Mock<IMapper>();
-            Guid answerGuid = new Guid("9c5cbfe2-1287-4c77-9a38-88cda36e52b1");
+            Guid answerGuid = Guid.NewGuid();
             AnswerDTO answerDTO = new AnswerDTO
             {
                 AnswerId = answerGuid,
@@ -61,7 +61,7 @@ namespace Examiner.UnitTests.Services
             //Arrange
             var repositoryMock = new Mock<IAnswerRepository>();
             var mapperMock = new Mock<IMapper>();
-            Guid answerGuid = new Guid("9c5cbfe2-1287-4c77-9a38-88cda36e52b1");
+            Guid answerGuid = Guid.NewGuid();
             AnswerDTO answerDTO = new AnswerDTO
             {
                 AnswerId = answerGuid,
@@ -69,7 +69,7 @@ namespace Examiner.UnitTests.Services
                 IsCorrect = false,
                 QuestionId = new Guid()
             };
-            Answer asnwer = new Answer(answerGuid, "Sample content", false, new Guid());
+            Answer asnwer = new Answer(answerGuid, "Sample content", false, Guid.NewGuid());
             repositoryMock.Setup(p => p.GetAsync(It.IsAny<Guid>())).ReturnsAsync(asnwer);
 
             AnswerService answerService = new AnswerService(repositoryMock.Object, mapperMock.Object);
@@ -87,7 +87,7 @@ namespace Examiner.UnitTests.Services
             //Arrange
             var repositoryMock = new Mock<IAnswerRepository>();
             var mapperMock = new Mock<IMapper>();
-            Guid answerGuid = new Guid("9c5cbfe2-1287-4c77-9a38-88cda36e52b1");
+            Guid answerGuid = Guid.NewGuid();
             AnswerDTO answerDTO = new AnswerDTO
             {
                 AnswerId = answerGuid,
@@ -95,7 +95,7 @@ namespace Examiner.UnitTests.Services
                 IsCorrect = false,
                 QuestionId = new Guid()
             };
-            Answer asnwer = new Answer(answerGuid, "Sample content", false, new Guid());
+            Answer asnwer = new Answer(answerGuid, "Sample content", false, Guid.NewGuid());
 
             AnswerService answerService = new AnswerService(repositoryMock.Object, mapperMock.Object);
 
@@ -111,7 +111,7 @@ namespace Examiner.UnitTests.Services
             //Arrange
             var repositoryMock = new Mock<IAnswerRepository>();
             var mapperMock = new Mock<IMapper>();
-            Guid answerGuid = new Guid("9c5cbfe2-1287-4c77-9a38-88cda36e52b1");
+            Guid answerGuid = Guid.NewGuid();
             AnswerDTO answerDTO = new AnswerDTO
             {
                 AnswerId = answerGuid,
@@ -119,7 +119,7 @@ namespace Examiner.UnitTests.Services
                 IsCorrect = false,
                 QuestionId = new Guid()
             };
-            Answer asnwer = new Answer(answerGuid, "Sample content", false, new Guid());
+            Answer asnwer = new Answer(answerGuid, "Sample content", false, Guid.NewGuid());
             mapperMock.Setup(p => p.Map<AnswerDTO, Answer>(It.IsAny<AnswerDTO>())).Returns(asnwer);
 
             AnswerService answerService = new AnswerService(repositoryMock.Object, mapperMock.Object);
@@ -137,8 +137,8 @@ namespace Examiner.UnitTests.Services
             //Arrange
             var repositoryMock = new Mock<IAnswerRepository>();
             var mapperMock = new Mock<IMapper>();
-            Guid answerGuid = new Guid("9c5cbfe2-1287-4c77-9a38-88cda36e52b1");
-            Answer asnwer = new Answer(answerGuid, "Sample content", false, new Guid());
+            Guid answerGuid = Guid.NewGuid();
+            Answer asnwer = new Answer(answerGuid, "Sample content", false, Guid.NewGuid());
             repositoryMock.Setup(p => p.GetAsync(It.IsAny<Guid>())).ReturnsAsync(asnwer);
 
             AnswerService answerService = new AnswerService(repositoryMock.Object, mapperMock.Object);
@@ -156,7 +156,7 @@ namespace Examiner.UnitTests.Services
             //Arrange
             var repositoryMock = new Mock<IAnswerRepository>();
             var mapperMock = new Mock<IMapper>();
-            Guid answerGuid = new Guid("9c5cbfe2-1287-4c77-9a38-88cda36e52b1");
+            Guid answerGuid = Guid.NewGuid();
             Answer asnwer = null;
             repositoryMock.Setup(p => p.GetAsync(It.IsAny<Guid>())).ReturnsAsync(asnwer);
 
@@ -175,8 +175,8 @@ namespace Examiner.UnitTests.Services
             //Arrange
             var repositoryMock = new Mock<IAnswerRepository>();
             var mapperMock = new Mock<IMapper>();
-            Guid answerGuid = new Guid("9c5cbfe2-1287-4c77-9a38-88cda36e52b1");
-            Answer asnwer = new Answer(answerGuid, "Sample content", false, new Guid());
+            Guid answerGuid = Guid.NewGuid();
+            Answer asnwer = new Answer(answerGuid, "Sample content", false, Guid.NewGuid());
             repositoryMock.Setup(p => p.GetAsync(It.IsAny<Guid>())).ReturnsAsync(asnwer);
 
             AnswerService answerService = new AnswerService(repositoryMock.Object, mapperMock.Object);
@@ -194,7 +194,7 @@ namespace Examiner.UnitTests.Services
             //Arrange
             var repositoryMock = new Mock<IAnswerRepository>();
             var mapperMock = new Mock<IMapper>();
-            Guid answerGuid = new Guid("9c5cbfe2-1287-4c77-9a38-88cda36e52b1");
+            Guid answerGuid = Guid.NewGuid();
 
             AnswerService answerService = new AnswerService(repositoryMock.Object, mapperMock.Object);
 
@@ -211,7 +211,7 @@ namespace Examiner.UnitTests.Services
             //Arrange
             var repositoryMock = new Mock<IAnswerRepository>();
             var mapperMock = new Mock<IMapper>();
-            Guid answerGuid = new Guid("9c5cbfe2-1287-4c77-9a38-88cda36e52b1");
+            Guid answerGuid = Guid.NewGuid();
             AnswerDTO answerDTO = new AnswerDTO
             {
                 AnswerId = answerGuid,
@@ -219,7 +219,7 @@ namespace Examiner.UnitTests.Services
                 IsCorrect = false,
                 QuestionId = new Guid()
             };
-            Answer asnwer = new Answer(answerGuid, "Sample content", false, new Guid());
+            Answer asnwer = new Answer(answerGuid, "Sample content", false, Guid.NewGuid());
             repositoryMock.Setup(p => p.GetAsync(It.IsAny<Guid>())).ReturnsAsync(asnwer);
 
             AnswerService answerService = new AnswerService(repositoryMock.Object, mapperMock.Object);
@@ -237,7 +237,7 @@ namespace Examiner.UnitTests.Services
             //Arrange
             var repositoryMock = new Mock<IAnswerRepository>();
             var mapperMock = new Mock<IMapper>();
-            Guid questionGuid = new Guid("9c5cbfe2-1287-4c77-9a38-88cda36e52b1");
+            Guid questionGuid = Guid.NewGuid();
 
             AnswerService answerService = new AnswerService(repositoryMock.Object, mapperMock.Object);
             //Act
@@ -253,12 +253,12 @@ namespace Examiner.UnitTests.Services
             //Arrange
             var repositoryMock = new Mock<IAnswerRepository>();
             var mapperMock = new Mock<IMapper>();
-            Guid questionGuid = new Guid("9c5cbfe2-1287-4c77-9a38-88cda36e52b1");
+            Guid questionGuid = Guid.NewGuid();
             IEnumerable<Answer> asnwers = new List<Answer>
             {
-                new Answer(new Guid(), "Sample content", false, questionGuid),
-                new Answer(new Guid(), "Sample content", false, questionGuid),
-                new Answer(new Guid(), "Sample content", false, questionGuid)
+                new Answer(Guid.NewGuid(), "Sample content", false, questionGuid),
+                new Answer(Guid.NewGuid(), "Sample content", false, questionGuid),
+                new Answer(Guid.NewGuid(), "Sample content", false, questionGuid)
             };
             repositoryMock.Setup(p => p.GetAllForQuestion(It.IsAny<Guid>())).ReturnsAsync(asnwers);
 

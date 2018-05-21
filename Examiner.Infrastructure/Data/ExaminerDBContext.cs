@@ -16,7 +16,7 @@ namespace Examiner.Infrastructure.Data
         public ExaminerDBContext()
             : base("name=ExaminerDBContext")
         {
-            Database.SetInitializer(new CreateDatabaseIfNotExists<ExaminerDBContext>());
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ExaminerDBContext>());
             Configuration.LazyLoadingEnabled = false;
         }
 
