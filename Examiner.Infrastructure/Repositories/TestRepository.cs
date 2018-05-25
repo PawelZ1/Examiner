@@ -31,10 +31,11 @@ namespace Examiner.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Test>> GetAllForUserAsync(string userId)
+        public async Task<IEnumerable<Test>> GetAllForCategoryAsync(Guid categoryId)
         {
-            return await _context.Tests.Where(p => p.UserId == userId).ToListAsync();
+            return await _context.Tests.Where(p => p.TestCategoryId == categoryId).ToListAsync();
         }
+
 
         public async Task<Test> GetAsync(Guid testId)
         {

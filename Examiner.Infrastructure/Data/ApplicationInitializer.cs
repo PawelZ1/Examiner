@@ -31,7 +31,6 @@ namespace Examiner.Infrastructure.Data
         {
             var user = userManager.FindByName("user1@email.com");
 
-            context.Tests.AddOrUpdate(new Test(Guid.NewGuid(), "C# Essential", "Programming Languages", user.Id));
         }
     }
 }

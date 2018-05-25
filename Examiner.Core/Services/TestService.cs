@@ -43,21 +43,16 @@ namespace Examiner.Core.Services
             await _repository.DeleteAsync(testToRemove);
         }
 
+        public Task<IEnumerable<TestDTO>> GetCategoryTestsAsync(Guid categoryId)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<TestDTO> GetTestAsync(Guid testId)
         {
             Test test = await _repository.GetAsync(testId);
 
             return _mapper.Map<Test, TestDTO>(test);
-        }
-
-        public async Task<IEnumerable<TestDTO>> GetUserTestsAsync(string userId)
-        {
-            if (string.IsNullOrWhiteSpace(userId))
-                throw new ArgumentNullException("UserId cannot be null");
-
-            IEnumerable<Test> tests = await _repository.GetAllForUserAsync(userId);
-
-            return _mapper.Map<IEnumerable<Test>, IEnumerable<TestDTO>>(tests);
         }
     }
 }

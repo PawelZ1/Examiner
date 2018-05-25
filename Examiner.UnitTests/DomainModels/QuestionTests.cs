@@ -14,36 +14,33 @@ namespace Examiner.UnitTests.DomainModels
     {
         public Question CreateQuestion()
         {
-            return new Question(Guid.NewGuid(), "Sample Content", "user1");
+            return new Question(Guid.NewGuid(), "Sample Content", Guid.NewGuid());
         }
 
         [Test]
-        public void SetQuestionContent_GivenEmptyString_ThrowsArgumentException()
+        public void SetQuestionContent_GivenEmptyString_ThrowsArgumentNullException()
         {
+            //Arrange
             Question question = CreateQuestion();
 
-            Assert.Throws<ArgumentException>(() => question.SetQuestionContent(""));
+            //Act
+            Action act = () => question.SetQuestionContent(null);
+
+            //Assert
+            act.Should().Throw<ArgumentNullException>();
         }
 
         [Test]
         public void SetQuestionContent_GivenString_ChangesQuestionContent()
         {
+            //Arange
             Question question = CreateQuestion();
 
+            //Act
             question.SetQuestionContent("Question Content Changed");
 
+            //Assert
             question.QuestionContent.Should().Be("Question Content Changed");
-        }
-
-        [Test]
-        public void SetTestId_GivenGuid_ChangesTestId()
-        {
-            Guid newTestId = Guid.NewGuid();
-            Question question = CreateQuestion();
-
-            question.SetTestId(newTestId);
-
-            question.TestId.Should().Be(newTestId);
         }
     }
 }

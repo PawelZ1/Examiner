@@ -15,6 +15,8 @@ namespace Examiner.Core.Profiles
         {
             CreateMap<Test, TestDTO>();
             CreateMap<TestDTO, Test>();
+            CreateMap<TestCategory, TestCategoryDTO>();
+            CreateMap<TestCategoryDTO, TestCategory>();
             CreateMap<Question, QuestionDTO>();
             CreateMap<QuestionDTO, Question>();
             CreateMap<Answer, AnswerDTO>();

@@ -25,12 +25,5 @@ namespace Examiner.MvcClient.Controllers
             _mapper = mapper;
         }
 
-        // GET: Test
-        public async Task<ActionResult> Index()
-        {
-            IEnumerable<TestDTO> tests = await _testService.GetUserTestsAsync(User.Identity.GetUserId());
-            var model = _mapper.Map<IEnumerable<TestDTO>, IEnumerable<TestViewModel>>(tests);
-            return View(model);
-        }
     }
 }

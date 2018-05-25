@@ -28,8 +28,8 @@ namespace Examiner.MvcClient
 
             builder.RegisterModule<IdentityModule>();
             builder.RegisterModule<DBModule>();
-            builder.RegisterModule<RepositoriesModule>();
             builder.RegisterModule<ServicesModule>();
+            builder.RegisterModule<ControllersModule>();
 
             // REGISTER CONTROLLERS SO DEPENDENCIES ARE CONSTRUCTOR INJECTED
             builder.RegisterControllers(typeof(MvcApplication).Assembly);

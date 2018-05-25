@@ -13,16 +13,17 @@ namespace Examiner.Core.DomainModels
         public bool IsCorrect { get; private set; }
 
         //Navigation properties
-        public virtual Guid QuestionId { get; private set; }
-        public virtual Question Question { get; private set; }
+        public virtual ICollection<Question> Questions { get; set; }
 
+        public virtual Guid? TestCategoryId { get; set; }
+        public virtual TestCategory TestCategory { get; set; }
 
-        public Answer(Guid answerId, string answerContent, bool isCorrect, Guid questionId)
+        public Answer(Guid answerId, string answerContent, bool isCorrect, Guid testCategoryId)
         {
             AnswerId = answerId;
             SetAnswerContent(answerContent);
             SetIsCorrect(isCorrect);
-            QuestionId = QuestionId;
+            TestCategoryId = testCategoryId;
         }
 
         public void SetAnswerContent(string answerContent)

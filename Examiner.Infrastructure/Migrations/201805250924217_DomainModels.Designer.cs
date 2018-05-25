@@ -7,13 +7,13 @@ namespace Examiner.Infrastructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Initialmigration : IMigrationMetadata
+    public sealed partial class DomainModels : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Initialmigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(DomainModels));
         
         string IMigrationMetadata.Id
         {
-            get { return "201804162030015_Initial migration"; }
+            get { return "201805250924217_DomainModels"; }
         }
         
         string IMigrationMetadata.Source

@@ -11,7 +11,7 @@ namespace Examiner.Core.Interfaces
     {
         Task AddQuestionAsync(QuestionDTO question);
         Task<QuestionDTO> GetQuestionAsync(Guid questionId);
-        Task<IEnumerable<QuestionDTO>> GetUserQuestionsAsync(string userId);
+        Task<IEnumerable<QuestionDTO>> GetCategoryQuestionsAsync(Guid categoryId);
         Task DeleteQuestionAsync(Guid questionId);
     }
 }

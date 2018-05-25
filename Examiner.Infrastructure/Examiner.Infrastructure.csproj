@@ -84,18 +84,15 @@
     <Compile Include="IdentityServices\ApplicationSignInManager.cs" />
     <Compile Include="IdentityServices\ApplicationUserManager.cs" />
     <Compile Include="IdentityServices\ApplicationUserStore.cs" />
-    <Compile Include="Migrations\201804162030015_Initial migration.cs" />
-    <Compile Include="Migrations\201804162030015_Initial migration.Designer.cs">
-      <DependentUpon>201804162030015_Initial migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805021621195_Domain models.cs" />
-    <Compile Include="Migrations\201805021621195_Domain models.Designer.cs">
-      <DependentUpon>201805021621195_Domain models.cs</DependentUpon>
+    <Compile Include="Migrations\201805250924217_DomainModels.cs" />
+    <Compile Include="Migrations\201805250924217_DomainModels.Designer.cs">
+      <DependentUpon>201805250924217_DomainModels.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AnswerRepository.cs" />
     <Compile Include="Repositories\QuestionRepository.cs" />
+    <Compile Include="Repositories\TestCategoryRepository.cs" />
     <Compile Include="Repositories\TestRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -109,13 +106,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804162030015_Initial migration.resx">
-      <DependentUpon>201804162030015_Initial migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805021621195_Domain models.resx">
-      <DependentUpon>201805021621195_Domain models.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201805250924217_DomainModels.resx">
+      <DependentUpon>201805250924217_DomainModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

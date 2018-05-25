@@ -14,34 +14,45 @@ namespace Examiner.UnitTests.DomainModels
     {
         public Answer CreateAnswer()
         {
-            return new Answer(Guid.NewGuid(), "Sample Content", true, Guid.NewGuid());
+            return new Answer(Guid.NewGuid(), "Sample Content",true, Guid.NewGuid());
         }
 
         [Test]
-        public void SetAnswerContent_GivenEmptyString_ThrowsArgumentException()
+        public void SetAnswerContent_GivenEmptyString_ThrowsArgumentNullException()
         {
+            //Arrange
             Answer answer = CreateAnswer();
 
-            Assert.Throws<ArgumentException>(() => answer.SetAnswerContent(""));
+            //Act
+            Action act = () => answer.SetAnswerContent(null);
+
+            //Assert
+            act.Should().Throw<ArgumentNullException>();
         }
 
         [Test]
         public void SetAnswerContent_GivenString_ChangesAnswerContent()
         {
+            //Arrange
             Answer answer = CreateAnswer();
 
+            //Act
             answer.SetAnswerContent("New sample content");
 
+            //Assert
             answer.AnswerContent.Should().Be("New sample content");
         }
 
         [Test]
         public void SetIsCorrect_GivenBool_ChangesIsCorrect()
         {
+            //Arrange
             Answer answer = CreateAnswer();
 
+            //Act
             answer.SetIsCorrect(false);
 
+            //Assert
             answer.IsCorrect.Should().Be(false);
         }
     }

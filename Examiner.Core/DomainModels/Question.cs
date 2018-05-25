@@ -12,32 +12,28 @@ namespace Examiner.Core.DomainModels
         public string QuestionContent { get; private set; }
 
         //Navigation properties
-        public virtual ICollection<Answer> Answers { get; private set; }
+        public virtual ICollection<Answer> Answers { get; set; }
+        public virtual ICollection<Test> Tests { get; set; }
 
-        public virtual Guid? TestId { get; private set; }
-        public virtual Test Test { get; private set; }
+        public virtual Guid? TestCategoryId { get; set; }
+        public virtual TestCategory TestCategory { get; set; }
 
-        public virtual string UserId { get; private set; }
-        public virtual ApplicationUser User { get; private set; }
+        private Question() { }
 
-        public Question(Guid questionId, string questionContent, string userId)
+        public Question(Guid questionId, string questionContent, Guid testCategoryId)
         {
             QuestionId = questionId;
             SetQuestionContent(questionContent);
-            UserId = userId;
+            TestCategoryId = testCategoryId;
         }
 
         public void SetQuestionContent(string questionContent)
         {
             if (string.IsNullOrWhiteSpace(questionContent))
-                throw new ArgumentException("Question content cannot be empty");
+                throw new ArgumentNullException("Question content cannot be empty");
 
             QuestionContent = questionContent;
         }
 
-        public void SetTestId(Guid testId)
-        {
-            TestId = testId;
-        }
     }
 }

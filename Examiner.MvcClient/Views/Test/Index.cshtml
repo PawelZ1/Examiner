@@ -1,0 +1,31 @@
+﻿@using Examiner.MvcClient.Models
+@model IEnumerable<TestViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>YourTests</h2>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(p => p.TestId)</td>
+            <td>@Html.DisplayNameFor(p => p.Name)</td>
+            <td>@Html.DisplayNameFor(p => p.Category)</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(p => item.TestId)</td>
+                <td>@Html.DisplayFor(p => item.Name)</td>
+                <td>@Html.DisplayFor(p => item.Category)</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+

@@ -10,38 +10,36 @@ using System.Threading.Tasks;
 namespace Examiner.UnitTests.DomainModels
 {
     [TestFixture]
-    public class TestTests
+    public class TestCategoryTests
     {
-        public Test CreateTest()
+        public TestCategory CreateTestCategory()
         {
-            return new Test(Guid.NewGuid(), "SampleTest", Guid.NewGuid());
+            return new TestCategory(Guid.NewGuid(), "Sample Category", Guid.NewGuid().ToString());
         }
 
-        [Test]
-        public void SetName_GivenEmptyString_ThrowsArgumentNullException()
+        public void SetName_GivenNullString_ThrowsArgumentNullException()
         {
             //Arrange
-            Test test = CreateTest();
+            TestCategory category = CreateTestCategory();
 
             //Act
-            Action act = () => test.SetName(null);
+            Action act = () => category.SetName(null);
 
             //Assert
             act.Should().Throw<ArgumentNullException>();
         }
 
-        [Test]
         public void SetName_GivenString_ChangesName()
         {
             //Arrange
-            Test test = CreateTest();
+            TestCategory category = CreateTestCategory();
+            string newName = "Changed Name";
 
             //Act
-            test.SetName("NewName");
+            category.SetName(newName);
 
             //Assert
-            test.Name.Should().Be("NewName");
+            category.Name.Should().Be(newName);
         }
-
     }
 }

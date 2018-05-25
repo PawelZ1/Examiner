@@ -50,11 +50,9 @@ namespace Examiner.Core.Services
             return _mapper.Map<Answer, AnswerDTO>(answer);
         }
 
-        public async Task<IEnumerable<AnswerDTO>> GetQuestionAnswersAsync(Guid questionId)
+        public Task<IEnumerable<AnswerDTO>> GetCategoryAnswersAsync(Guid categoryId)
         {
-            IEnumerable<Answer> answers = await _repository.GetAllForQuestion(questionId);
-
-            return _mapper.Map<IEnumerable<Answer>, IEnumerable<AnswerDTO>>(answers);
+            throw new NotImplementedException();
         }
     }
 }

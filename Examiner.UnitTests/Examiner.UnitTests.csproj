@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="DomainModels\AnswerTests.cs" />
     <Compile Include="DomainModels\QuestionTests.cs" />
+    <Compile Include="DomainModels\TestCategoryTests.cs" />
     <Compile Include="DomainModels\TestTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AnswerServiceTests.cs" />

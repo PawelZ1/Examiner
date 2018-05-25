@@ -31,9 +31,9 @@ namespace Examiner.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Answer>> GetAllForQuestion(Guid questionId)
+        public async Task<IEnumerable<Answer>> GetAllForCategoryAsync(Guid categoryId)
         {
-            return await _context.Answers.Where(p => p.QuestionId == questionId).ToListAsync();
+            throw new NotImplementedException();
         }
 
         public async Task<Answer> GetAsync(Guid answerId)
