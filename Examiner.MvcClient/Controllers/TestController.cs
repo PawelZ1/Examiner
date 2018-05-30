@@ -1,29 +1,30 @@
-﻿using AutoMapper;
-using Examiner.Core.Interfaces;
+﻿using Examiner.Core.DomainModels;
+using Examiner.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Examiner.Core.DTOs;
-using Examiner.MvcClient.Models;
-using System.Threading.Tasks;
 
 namespace Examiner.MvcClient.Controllers
 {
-    [Authorize]
     public class TestController : Controller
     {
-        private readonly ITestService _testService;
-        private readonly IMapper _mapper;
+        private readonly ExaminerDBContext _context;
 
-
-        public TestController(ITestService testService, IMapper mapper)
+        public TestController(ExaminerDBContext context)
         {
-            _testService = testService;
-            _mapper = mapper;
+            _context = context;
         }
 
+        // GET: Test
+        public ActionResult Index()
+        {
+
+            var model = _context.TestComponents.ToList();
+
+            return View(model);
+        }
     }
 }

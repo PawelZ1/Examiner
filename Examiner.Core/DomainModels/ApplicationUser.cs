@@ -11,10 +11,10 @@ namespace Examiner.Core.DomainModels
 {
     public class ApplicationUser : IdentityUser
     {
-        public virtual ICollection<TestCategory> TestCategories { get; private set; }
-        public virtual ICollection<Test> Tests { get; private set; }
-        public virtual ICollection<Question> Questions { get; private set; }
-        public virtual ICollection<Answer> Answers { get; private set; }
+        public virtual ICollection<TestComponent> TestComponents { get; set; }
+        public virtual ICollection<TestBase> TestBases { get; set; }
+        public virtual ICollection<QuestionBase> QuestionBases { get; set; }
+        public virtual ICollection<Answer> Answers { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

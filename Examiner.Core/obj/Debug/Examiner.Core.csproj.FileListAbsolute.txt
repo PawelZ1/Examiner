@@ -57,3 +57,4 @@ C:\Users\pawel\source\repos\Examiner\Examiner.Core\obj\Debug\Examiner.Core.dll
 C:\Users\pawel\source\repos\Examiner\Examiner.Core\obj\Debug\Examiner.Core.pdb
 C:\Users\pawel\source\repos\Examiner\Examiner.Core\bin\Debug\AutoMapper.dll
 C:\Users\pawel\source\repos\Examiner\Examiner.Core\bin\Debug\AutoMapper.xml
+C:\Users\pawel\source\repos\Examiner\Examiner.Core\obj\Debug\Examiner.Core.csprojAssemblyReference.cache

@@ -6,32 +6,43 @@ using System.Threading.Tasks;
 
 namespace Examiner.Core.DomainModels
 {
-    public class Test
+    public class Test : TestComponent
     {
-        public Guid TestId { get; private set; }
-        public string Name { get; private set; }
-
-        //Navigation properties
-        public virtual ICollection<Question> Questions { get; set; }
-
-        public virtual Guid? TestCategoryId { get; set; }
-        public virtual TestCategory TestCategory { get; set; }
+        public virtual Guid TestBaseId { get; private set; }
+        public virtual TestBase TestBase { get; private set; }
 
         private Test() { }
 
-        public Test(Guid id, string name, Guid testCategoryId)
+        public Test(Guid id, TestBase testBase, string userId) : base(id, userId)
         {
-            TestId = id;
-            SetName(name);
-            TestCategoryId = testCategoryId;
+            TestBase = testBase;
         }
 
-        public void SetName(string name)
+        public override Guid GetApplicableFor()
         {
-            if (string.IsNullOrWhiteSpace(name))
-                throw new ArgumentNullException("Test name cannot be empty");
+            if (TestBase.ApplicableFor.HasValue)
+                return TestBase.ApplicableFor.Value;
 
-            Name = name;
+            //if method reaches this point Exception is thrown
+            throw new ArgumentNullException("This Test cannot be applied as component");
+        }
+
+        public override string GetContent()
+        {
+            return TestBase.Content;
+        }
+
+        public override void Add(TestComponent component)
+        {
+            if (TestBase.TestBaseId == component.GetApplicableFor())
+                Components.Add(component);
+            else
+                throw new ArgumentException("Given component is not applicable for this element");
+        }
+
+        public override void Remove(TestComponent component)
+        {
+            Components.Remove(component);
         }
     }
 }

@@ -6,37 +6,52 @@ using System.Threading.Tasks;
 
 namespace Examiner.Core.DomainModels
 {
-    public class Answer
+    public class Answer : TestComponent
     {
-        public Guid AnswerId { get; private set; }
-        public string AnswerContent { get; private set; }
+        public string Content { get; private set; }
+        public Guid ApplicableFor { get; private set; }
         public bool IsCorrect { get; private set; }
 
-        //Navigation properties
-        public virtual ICollection<Question> Questions { get; set; }
+        private Answer() { }
 
-        public virtual Guid? TestCategoryId { get; set; }
-        public virtual TestCategory TestCategory { get; set; }
-
-        public Answer(Guid answerId, string answerContent, bool isCorrect, Guid testCategoryId)
+        public Answer(Guid id, string content, Guid applicableFor, bool isCorrect, string userId) : base(id, userId)
         {
-            AnswerId = answerId;
-            SetAnswerContent(answerContent);
+            SetContent(content);
             SetIsCorrect(isCorrect);
-            TestCategoryId = testCategoryId;
+            ApplicableFor = applicableFor;
         }
 
-        public void SetAnswerContent(string answerContent)
+        public override string GetContent()
         {
-            if (string.IsNullOrWhiteSpace(answerContent))
-                throw new ArgumentException("Answer content cannot be empty");
-
-            AnswerContent = answerContent;
+            return Content;
         }
 
-        public void SetIsCorrect(bool isCorrect)
+        public override Guid GetApplicableFor()
         {
-            IsCorrect = isCorrect;
+            return ApplicableFor;
+        }
+
+        public void SetContent(string content)
+        {
+            if (string.IsNullOrWhiteSpace(content))
+                throw new ArgumentNullException("Answer content cannot be empty");
+
+            Content = content;
+        }
+
+        public void SetIsCorrect(bool value)
+        {
+            IsCorrect = value;
+        }
+
+        public override void Add(TestComponent component)
+        {
+            throw new NotImplementedException("This element cannot have components");
+        }
+
+        public override void Remove(TestComponent component)
+        {
+            throw new NotImplementedException("This element cannot have components");
         }
     }
 }

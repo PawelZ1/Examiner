@@ -6,34 +6,41 @@ using System.Threading.Tasks;
 
 namespace Examiner.Core.DomainModels
 {
-    public class Question
+    public class Question : TestComponent
     {
-        public Guid QuestionId { get; private set; }
-        public string QuestionContent { get; private set; }
-
-        //Navigation properties
-        public virtual ICollection<Answer> Answers { get; set; }
-        public virtual ICollection<Test> Tests { get; set; }
-
-        public virtual Guid? TestCategoryId { get; set; }
-        public virtual TestCategory TestCategory { get; set; }
+        public virtual Guid QuestionBaseId { get; private set; }
+        public virtual QuestionBase QuestionBase { get; private set; }
 
         private Question() { }
 
-        public Question(Guid questionId, string questionContent, Guid testCategoryId)
+        public Question(Guid id, QuestionBase questionBase, string userId) : base(id, userId)
         {
-            QuestionId = questionId;
-            SetQuestionContent(questionContent);
-            TestCategoryId = testCategoryId;
+            QuestionBase = questionBase;
         }
 
-        public void SetQuestionContent(string questionContent)
+        public override Guid GetApplicableFor()
         {
-            if (string.IsNullOrWhiteSpace(questionContent))
-                throw new ArgumentNullException("Question content cannot be empty");
-
-            QuestionContent = questionContent;
+            return QuestionBase.ApplicableFor;    
         }
+
+        public override string GetContent()
+        {
+            return QuestionBase.Content;
+        }
+
+        public override void Add(TestComponent component)
+        {
+            if (QuestionBase.QuestionBaseId == component.GetApplicableFor())
+                Components.Add(component);
+            else
+                throw new ArgumentException("Given component is not applicable for this element");
+        }
+
+        public override void Remove(TestComponent component)
+        {
+            Components.Remove(component);
+        }
+
 
     }
 }

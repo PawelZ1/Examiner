@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Examiner.Core.DTOs;
 using Examiner.MvcClient.Models;
 using System;
 using System.Collections.Generic;
@@ -12,7 +11,6 @@ namespace Examiner.MvcClient.Profiles
     {
         public ControllerProfile()
         {
-            CreateMap<TestDTO, TestViewModel>();
         }
     }
 }
