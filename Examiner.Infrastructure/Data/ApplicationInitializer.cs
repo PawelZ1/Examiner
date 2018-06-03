@@ -30,23 +30,7 @@ namespace Examiner.Infrastructure.Data
 
        public void InitializeData(ExaminerDBContext context, ApplicationUserManager userManager)
         {
-            var user = userManager.FindByName("user1@email.com");
 
-            TestBase testBase = new TestBase(Guid.NewGuid(), "C# Essentials", "77C443D6-A6AE-49BF-913B-35DD1B4E4B1A");
-            QuestionBase questionBase = new QuestionBase(Guid.NewGuid(), "abstract method is ?", "77C443D6-A6AE-49BF-913B-35DD1B4E4B1A", testBase.TestBaseId);
-
-            Test test = new Test(Guid.NewGuid(), testBase, "77C443D6-A6AE-49BF-913B-35DD1B4E4B1A");
-            Question question = new Question(Guid.NewGuid(), questionBase, "77C443D6-A6AE-49BF-913B-35DD1B4E4B1A");
-            Answer answer = new Answer(Guid.NewGuid(), "Method for override", questionBase.QuestionBaseId, true, "77C443D6-A6AE-49BF-913B-35DD1B4E4B1A");
-
-            context.TestBases.AddOrUpdate(testBase);
-            context.QuestionBases.AddOrUpdate(questionBase);
-
-            question.Add(answer);
-            test.Add(question);
-            context.TestComponents.AddOrUpdate(test);
-
-            context.SaveChanges();
         }
     }
 }

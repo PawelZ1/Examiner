@@ -14,17 +14,13 @@ namespace Examiner.Core.DomainModels
 
         public virtual ICollection<Question> Questions { get; set; }
 
-        public virtual ApplicationUser User { get; private set; }
-        public virtual string ApplicationUserId { get; private set; }
-
         private QuestionBase() { }
 
-        public QuestionBase(Guid questionBaseId, string content, string applicationUserId, Guid applicableFor)
+        public QuestionBase(Guid questionBaseId, string content, Guid applicableFor)
         {
             QuestionBaseId = questionBaseId;
             SetContent(content);
             ApplicableFor = applicableFor;
-            ApplicationUserId = applicationUserId;
         }
 
         public void SetContent(string content)

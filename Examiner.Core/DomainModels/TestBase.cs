@@ -9,21 +9,19 @@ namespace Examiner.Core.DomainModels
     public class TestBase
     {
         public Guid TestBaseId { get; private set; }
-        public string Content { get; private set; }
+        public string Content { get; set; }
         public Guid? ApplicableFor { get; private set; }
 
         public virtual ICollection<Test> Tests { get; set; }
 
-        public virtual ApplicationUser User { get; private set; }
-        public virtual string ApplicationUserId { get; private set; }
 
         private TestBase() { }
 
-        public TestBase(Guid testBaseId ,string content, string applicationUserId)
+        public TestBase(Guid testBaseId ,string content, Guid? applicableFor = null)
         {
             TestBaseId = testBaseId;
             SetContent(content);
-            ApplicationUserId = applicationUserId;
+            ApplicableFor = applicableFor;
         }
 
         public void SetContent(string content)

@@ -58,3 +58,6 @@ C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\bin\Debug\Newtonsof
 C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.Infrastructure.Migrations.domainclasses.resources
 C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.Infrastructure.csproj.GenerateResource.cache
 C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.Infrastructure.Migrations.domainclassesfix.resources
+C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.Infrastructure.Migrations.NamepropinTest.resources
+C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.Infrastructure.Migrations.TestNameisrequired.resources
+C:\Users\pawel\source\repos\Examiner\Examiner.Infrastructure\obj\Debug\Examiner.Infrastructure.Migrations.userremovedfrombases.resources

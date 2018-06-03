@@ -65,12 +65,12 @@ namespace Examiner.Infrastructure.Data
             testBases.HasKey(p => p.TestBaseId);
             testBases.Property(p => p.Content).IsRequired().HasMaxLength(10000);
             testBases.Property(p => p.ApplicableFor).IsOptional();
-            testBases.HasRequired(p => p.User).WithMany(p => p.TestBases).HasForeignKey(p => p.ApplicationUserId);
             
             //Tests table
             var tests = modelBuilder.Entity<Test>();
             tests.ToTable("Tests");
             tests.HasKey(p => p.Id);
+            tests.Property(p => p.Name).IsRequired().HasMaxLength(1000);
             tests.HasRequired(p => p.TestBase).WithMany(p => p.Tests).HasForeignKey(p => p.TestBaseId);
 
             //Question bases table
@@ -79,7 +79,6 @@ namespace Examiner.Infrastructure.Data
             questionBases.HasKey(p => p.QuestionBaseId);
             questionBases.Property(p => p.Content).IsRequired().HasMaxLength(10000);
             questionBases.Property(p => p.ApplicableFor).IsRequired();
-            questionBases.HasRequired(p => p.User).WithMany(p => p.QuestionBases).HasForeignKey(p => p.ApplicationUserId);
 
             //Questions table
             var questions = modelBuilder.Entity<Question>();

@@ -85,6 +85,12 @@
     <Compile Include="DomainModels\Test.cs" />
     <Compile Include="DomainModels\TestBase.cs" />
     <Compile Include="DomainModels\TestComponent.cs" />
+    <Compile Include="Interfaces\Repositories\IAnswerRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IQuestionBaseRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IQuestionRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ITestBaseRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ITestComponentRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ITestRepository.cs" />
     <Compile Include="Profiles\ServicesProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -94,7 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTOs\" />
-    <Folder Include="Interfaces\" />
+    <Folder Include="Interfaces\Services\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

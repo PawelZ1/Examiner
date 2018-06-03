@@ -8,14 +8,16 @@ namespace Examiner.Core.DomainModels
 {
     public class Test : TestComponent
     {
+        public string Name { get; private set; }
         public virtual Guid TestBaseId { get; private set; }
         public virtual TestBase TestBase { get; private set; }
 
         private Test() { }
 
-        public Test(Guid id, TestBase testBase, string userId) : base(id, userId)
+        public Test(Guid id, TestBase testBase, string name, string userId) : base(id, userId)
         {
             TestBase = testBase;
+            SetName(name);
         }
 
         public override Guid GetApplicableFor()
@@ -24,7 +26,15 @@ namespace Examiner.Core.DomainModels
                 return TestBase.ApplicableFor.Value;
 
             //if method reaches this point Exception is thrown
-            throw new ArgumentNullException("This Test cannot be applied as component");
+            throw new ArgumentException("This Test cannot be applied as component");
+        }
+
+        public void SetName(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+                throw new ArgumentNullException("Name cannot be empty");
+
+            Name = name;
         }
 
         public override string GetContent()
