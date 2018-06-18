@@ -27,19 +27,17 @@ namespace Examiner.Infrastructure.Repositories
 
         public async Task DeleteAsync(Answer answer)
         {
-            _context.Answers.Remove(answer);
-            await _context.SaveChangesAsync();
+            throw new NotImplementedException();
         }
 
         public async Task<Answer> GetAsync(Guid id)
         {
-            return await _context.Answers.SingleOrDefaultAsync(p => p.Id == id);
+            return await _context.Answers.FirstOrDefaultAsync(p => p.Id == id);
         }
 
         public async Task UpdateAsync(Answer answer)
         {
-            _context.Entry(answer).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using Autofac;
+using Examiner.Core.Interfaces.Repositories;
+using Examiner.Infrastructure.Repositories;
 using Examiner.MvcClient.Mapper;
 using System;
 using System.Collections.Generic;
@@ -11,7 +13,7 @@ namespace Examiner.MvcClient.Modules
     {
         protected override void Load(ContainerBuilder builder)
         {
-
+            builder.RegisterType<QuestionRepository>().As<IQuestionRepository>();
             builder.RegisterInstance(AutoMapperConfig.Initialize()).SingleInstance();
             base.Load(builder); 
         }

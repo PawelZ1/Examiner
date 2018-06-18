@@ -3,7 +3,6 @@ using Examiner.Core.Interfaces.Repositories;
 using Examiner.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,27 +18,20 @@ namespace Examiner.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task AddAsync(TestComponent component)
+        public async Task AddAsync(TestComponent testComponent)
         {
-            _context.TestComponents.Add(component);
+            _context.TestComponents.Add(testComponent);
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(TestComponent component)
+        public async Task DeleteAsync(TestComponent testComponent)
         {
-            _context.TestComponents.Remove(component);
-            await _context.SaveChangesAsync();
+            throw new NotImplementedException();
         }
 
-        public async Task<TestComponent> GetAsync(Guid id)
+        public async Task UpdateAsync(TestComponent testComponent)
         {
-            return await _context.TestComponents.SingleOrDefaultAsync(p => p.Id == id);
-        }
-
-        public async Task UpdateAsync(TestComponent component)
-        {
-            _context.Entry(component).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
+            throw new NotImplementedException();
         }
     }
 }

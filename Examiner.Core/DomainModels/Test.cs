@@ -6,53 +6,44 @@ using System.Threading.Tasks;
 
 namespace Examiner.Core.DomainModels
 {
-    public class Test : TestComponent
+    public class Test
     {
-        public string Name { get; private set; }
-        public virtual Guid TestBaseId { get; private set; }
-        public virtual TestBase TestBase { get; private set; }
+        public Guid TestId { get; private set; }
+        public string Content { get; set; }
+        public DateTime CreatedAt { get; private set; }
+        public DateTime UpdatedAt { get; private set; }
+
+        public Guid? ApplicableFor { get; private set; }
+
+        public virtual string UserId { get; private set; }
+        public virtual ApplicationUser User { get; private set; }
+
+        public virtual ICollection<TestVersion> TestVersions { get; set; }
+        public virtual ICollection<Question> Questions { get; set; }
 
         private Test() { }
 
-        public Test(Guid id, TestBase testBase, string name, string userId) : base(id, userId)
+        public Test(Guid testId ,string content, string userId, Guid? applicableFor = null)
         {
-            TestBase = testBase;
-            SetName(name);
+            TestId = testId;
+            SetContent(content);
+            UserId = userId;
+            ApplicableFor = applicableFor;
+            CreatedAt = DateTime.UtcNow;
+            Update();
         }
 
-        public override Guid GetApplicableFor()
+        public void SetContent(string content)
         {
-            if (TestBase.ApplicableFor.HasValue)
-                return TestBase.ApplicableFor.Value;
+            if (string.IsNullOrWhiteSpace(content))
+                throw new ArgumentNullException("Content cannot be empty");
 
-            //if method reaches this point Exception is thrown
-            throw new ArgumentException("This Test cannot be applied as component");
+            Content = content;
         }
 
-        public void SetName(string name)
+        public void Update()
         {
-            if (string.IsNullOrWhiteSpace(name))
-                throw new ArgumentNullException("Name cannot be empty");
-
-            Name = name;
-        }
-
-        public override string GetContent()
-        {
-            return TestBase.Content;
-        }
-
-        public override void Add(TestComponent component)
-        {
-            if (TestBase.TestBaseId == component.GetApplicableFor())
-                Components.Add(component);
-            else
-                throw new ArgumentException("Given component is not applicable for this element");
-        }
-
-        public override void Remove(TestComponent component)
-        {
-            Components.Remove(component);
+            UpdatedAt = DateTime.UtcNow;
         }
     }
 }

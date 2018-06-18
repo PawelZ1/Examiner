@@ -1,0 +1,55 @@
+﻿@model Examiner.MvcClient.Models.QuestionViewModel
+
+@{
+    ViewBag.Title = "GetQuestionDetails";
+    int answerNumber = 1;
+}
+
+<h2>GetQuestionDetails</h2>
+
+@Html.ActionLink("Back to questions", "Index", "Question" , null, new { @class="btn btn-outline-secondary"})
+
+<div class="card">
+    <div class="card-header">
+        <p>
+            @Html.DisplayFor(p => p.Content)
+        </p>
+        <p>
+            @Html.ActionLink("Modify", "UpdateQuestion", null, new { @class = "btn btn-sm btn-outline-primary" })
+            @Html.ActionLink("Add Answer", "CreateAnswer", null, new { @class = "btn btn-sm btn-outline-primary" })
+        </p>
+    </div>
+    <div class="card-body">
+        <div class="accordion" id="accordionExample">
+            @foreach (var item in Model.Answers)
+            {
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#@answerNumber" aria-expanded="true">
+                                Answer #@answerNumber
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="@(answerNumber++)" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <p>@Html.DisplayFor(p => item.Content)</p>
+                            <p>
+                                @Html.DisplayNameFor(p => item.IsCorrect)
+                                <span class=@(item.IsCorrect? "text-success" : "text-danger")>
+                                    @item.IsCorrect
+                                </span>
+                            </p>
+                            <p>
+                                @Html.ActionLink("Modify", "UpdateAnswer", new { id = item.Id}, new { @class="btn btn-sm btn-outline-primary"})
+                                @Html.ActionLink("Delete", "DeleteAnswer", new { id = item.Id }, new { @class="btn btn-sm btn-outline-primary"})
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

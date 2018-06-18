@@ -9,9 +9,8 @@ namespace Examiner.Core.Interfaces.Repositories
 {
     public interface ITestComponentRepository
     {
-        Task AddAsync(TestComponent component);
-        Task<TestComponent> GetAsync(Guid id);
-        Task UpdateAsync(TestComponent component);
-        Task DeleteAsync(TestComponent component);
+        Task AddAsync(TestComponent testComponent);
+        Task DeleteAsync(TestComponent testComponent);
+        Task UpdateAsync(TestComponent testComponent);
     }
 }

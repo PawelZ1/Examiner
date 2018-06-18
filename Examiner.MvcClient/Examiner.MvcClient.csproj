@@ -225,13 +225,18 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AccountSettingsController.cs" />
+    <Compile Include="Controllers\AuthorizationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Mapper\AutoMapperConfig.cs" />
     <Compile Include="Models\AcccountViewModels.cs" />
+    <Compile Include="Models\AnswerViewModel.cs" />
+    <Compile Include="Models\QuestionForListViewModel.cs" />
+    <Compile Include="Models\QuestionViewModel.cs" />
+    <Compile Include="Models\TestVersionViewModel.cs" />
     <Compile Include="Modules\ControllersModule.cs" />
     <Compile Include="Modules\DBModule.cs" />
     <Compile Include="Modules\IdentityModule.cs" />
@@ -267,7 +272,9 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_SideMenu.cshtml" />
-    <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\TestVersion\Index.cshtml" />
+    <Content Include="Views\Question\Index.cshtml" />
+    <Content Include="Views\Question\GetQuestionDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -278,6 +285,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\AccountSettings\" />
+    <Folder Include="Views\Authorization\" />
+    <Folder Include="Views\Autorization\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Examiner.Core\Examiner.Core.csproj">

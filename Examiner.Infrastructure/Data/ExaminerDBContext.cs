@@ -9,10 +9,10 @@ namespace Examiner.Infrastructure.Data
 
     public partial class ExaminerDBContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<TestBase> TestBases { get; set; }
         public DbSet<Test> Tests { get; set; }
-        public DbSet<QuestionBase> QuestionBases { get; set; }
+        public DbSet<TestVersion> TestVersions { get; set; }
         public DbSet<Question> Questions { get; set; }
+        public DbSet<QuestionVersion> QuestionVersions { get; set; }
         public DbSet<Answer> Answers { get; set; }
         public DbSet<TestComponent> TestComponents { get; set; }
 
@@ -55,41 +55,46 @@ namespace Examiner.Infrastructure.Data
             //Test components table
             var testComponents = modelBuilder.Entity<TestComponent>();
             testComponents.ToTable("TestComponents");
-            testComponents.HasRequired(p => p.User).WithMany(p => p.TestComponents).HasForeignKey(p => p.UserId);
             testComponents.HasMany(p => p.Components).WithOptional(p => p.Root);
-            
 
-            //Test bases table
-            var testBases = modelBuilder.Entity<TestBase>();
-            testBases.ToTable("TestBases");
-            testBases.HasKey(p => p.TestBaseId);
-            testBases.Property(p => p.Content).IsRequired().HasMaxLength(10000);
-            testBases.Property(p => p.ApplicableFor).IsOptional();
-            
             //Tests table
             var tests = modelBuilder.Entity<Test>();
             tests.ToTable("Tests");
-            tests.HasKey(p => p.Id);
-            tests.Property(p => p.Name).IsRequired().HasMaxLength(1000);
-            tests.HasRequired(p => p.TestBase).WithMany(p => p.Tests).HasForeignKey(p => p.TestBaseId);
-
-            //Question bases table
-            var questionBases = modelBuilder.Entity<QuestionBase>();
-            questionBases.ToTable("QuestionBases");
-            questionBases.HasKey(p => p.QuestionBaseId);
-            questionBases.Property(p => p.Content).IsRequired().HasMaxLength(10000);
-            questionBases.Property(p => p.ApplicableFor).IsRequired();
+            tests.HasKey(p => p.TestId);
+            tests.HasRequired(p => p.User).WithMany(p => p.Tests).HasForeignKey(p => p.UserId);
+            tests.Property(p => p.Content).IsRequired().HasMaxLength(10000);
+            tests.Ignore(p => p.ApplicableFor);
+            
+            //Test versions table
+            var testVersions = modelBuilder.Entity<TestVersion>();
+            testVersions.ToTable("TestVersions");
+            testVersions.HasKey(p => p.Id);
+            testVersions.Property(p => p.Name).IsRequired().HasMaxLength(1000);
+            testVersions.HasRequired(p => p.Test).WithMany(p => p.TestVersions).HasForeignKey(p => p.TestId);
+            testVersions.Property(p => p.CreatedAt).IsRequired();
+            testVersions.Property(p => p.UpdatedAt).IsRequired();
 
             //Questions table
             var questions = modelBuilder.Entity<Question>();
             questions.ToTable("Questions");
-            questions.HasKey(p => p.Id);
-            questions.HasRequired(p => p.QuestionBase).WithMany(p => p.Questions).HasForeignKey(p => p.QuestionBaseId);
+            questions.HasKey(p => p.QuestionId);
+            questions.HasOptional(p => p.User).WithMany(p => p.Questions).HasForeignKey(p => p.UserId);
+            questions.HasRequired(p => p.Test).WithMany(p => p.Questions).HasForeignKey(p => p.ApplicableFor);
+            questions.Property(p => p.Content).IsRequired().HasMaxLength(10000);
+            questions.Property(p => p.ApplicableFor).IsRequired();
+
+            //Question versions table
+            var questionVersions = modelBuilder.Entity<QuestionVersion>();
+            questionVersions.ToTable("QuestionVersions");
+            questionVersions.HasKey(p => p.Id);
+            questionVersions.HasRequired(p => p.Question).WithMany(p => p.QuestionVersions).HasForeignKey(p => p.QuestionId);
 
             //Answers table
             var answers = modelBuilder.Entity<Answer>();
             answers.ToTable("Answers");
             answers.HasKey(p => p.Id);
+            answers.HasRequired(p => p.User).WithMany(p => p.Answers);
+            answers.HasRequired(p => p.Question).WithMany(p => p.Answers).HasForeignKey(p => p.ApplicableFor).WillCascadeOnDelete(false);
             answers.Property(p => p.ApplicableFor).IsRequired();
             answers.Property(p => p.Content).IsRequired().HasMaxLength(5000);
             answers.Property(p => p.IsCorrect).IsRequired();

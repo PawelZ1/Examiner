@@ -21,25 +21,27 @@ namespace Examiner.Infrastructure.Repositories
 
         public async Task AddAsync(Question question)
         {
-            _context.Questions.Add(question);
-            await _context.SaveChangesAsync();
+            throw new NotImplementedException();
         }
 
         public async Task DeleteAsync(Question question)
         {
-            _context.Questions.Remove(question);
-            await _context.SaveChangesAsync();
+            throw new NotImplementedException();
+        }
+
+        public async Task<IEnumerable<Question>> GetAllForUserAsync(string userId)
+        {
+            return await _context.Questions.Include(p => p.Answers).Where(p => p.UserId == userId).ToListAsync();
         }
 
         public async Task<Question> GetAsync(Guid id)
         {
-            return await _context.Questions.SingleOrDefaultAsync(p => p.Id == id);
+            return await _context.Questions.Include(p => p.Answers).FirstAsync(p => p.QuestionId == id);
         }
 
         public async Task UpdateAsync(Question question)
         {
-            _context.Entry(question).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
+            throw new NotImplementedException();
         }
     }
 }

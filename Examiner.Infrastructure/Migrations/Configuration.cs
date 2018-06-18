@@ -14,7 +14,8 @@ namespace Examiner.Infrastructure.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Examiner.Infrastructure.Data.ExaminerDBContext context)

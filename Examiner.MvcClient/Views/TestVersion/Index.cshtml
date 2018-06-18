@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Examiner.MvcClient.Models.TestViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Your tests</h2>
+
+<table class="table table-striped text-center">
+    <thead>
+        <tr>
+            <th>No. </th>
+            <th>Name</th>
+            <th>No. of Questions</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.NumberOfQuestions</td>
+                <td>
+                    @Html.ActionLink("Details", "TestDetails", new { id = item.Id }, new { @class= "btn btn-outline-primary" })
+                    @Html.ActionLink("Modify", "EditTest", new { id = item.Id }, new { @class= "btn btn-outline-primary" })
+                    @Html.ActionLink("Delete", "DeleteTest", new { id = item.Id }, new { @class= "btn btn-outline-primary" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

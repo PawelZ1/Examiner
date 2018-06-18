@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Examiner.Core.Profiles;
+using Examiner.MvcClient.Profiles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace Examiner.MvcClient.Mapper
             return new MapperConfiguration(conf =>
             {
                 conf.AddProfile<ServicesProfile>();
+                conf.AddProfile<ControllerProfile>();
             }).CreateMapper();
         }
     }

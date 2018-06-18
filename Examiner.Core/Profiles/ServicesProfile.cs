@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Examiner.Core.DomainModels;
+using Examiner.Core.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,8 @@ namespace Examiner.Core.Profiles
     {
         public ServicesProfile()
         {
-
+            CreateMap<Question, QuestionDTO>().ForMember(dest => dest.AnswerDTOs, p => p.MapFrom(source => source.Answers));
+            CreateMap<Answer, AnswerDTO>();
         }
     }
 }

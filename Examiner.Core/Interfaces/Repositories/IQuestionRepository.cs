@@ -11,6 +11,7 @@ namespace Examiner.Core.Interfaces.Repositories
     {
         Task AddAsync(Question question);
         Task<Question> GetAsync(Guid id);
+        Task<IEnumerable<Question>> GetAllForUserAsync(string userId);
         Task UpdateAsync(Question question);
         Task DeleteAsync(Question question);
     }

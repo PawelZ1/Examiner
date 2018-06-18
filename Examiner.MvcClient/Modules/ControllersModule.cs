@@ -1,4 +1,6 @@
 ﻿using Autofac;
+using Examiner.Core.Interfaces.Services;
+using Examiner.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +12,7 @@ namespace Examiner.MvcClient.Modules
     {
         protected override void Load(ContainerBuilder builder)
         {
+            builder.RegisterType<QuestionService>().As<IQuestionService>();
             base.Load(builder);
         }
     }

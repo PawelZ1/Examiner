@@ -9,16 +9,22 @@ namespace Examiner.Core.DomainModels
     public class Answer : TestComponent
     {
         public string Content { get; private set; }
-        public Guid ApplicableFor { get; private set; }
         public bool IsCorrect { get; private set; }
+
+        private Guid ApplicableFor;
+        public Question Question { get; set; }
+
+        public virtual string UserId { get; private set; }
+        public virtual ApplicationUser User { get; private set; }
 
         private Answer() { }
 
-        public Answer(Guid id, string content, Guid applicableFor, bool isCorrect, string userId) : base(id, userId)
+        public Answer(Guid id, string content, Guid applicableFor, bool isCorrect, string userId) : base(id)
         {
             SetContent(content);
-            SetIsCorrect(isCorrect);
             ApplicableFor = applicableFor;
+            SetIsCorrect(isCorrect);
+            UserId = userId;
         }
 
         public override string GetContent()

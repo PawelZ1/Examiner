@@ -80,28 +80,29 @@
   <ItemGroup>
     <Compile Include="DomainModels\Answer.cs" />
     <Compile Include="DomainModels\ApplicationUser.cs" />
+    <Compile Include="DomainModels\QuestionVersion.cs" />
     <Compile Include="DomainModels\Question.cs" />
-    <Compile Include="DomainModels\QuestionBase.cs" />
+    <Compile Include="DomainModels\TestVersion.cs" />
     <Compile Include="DomainModels\Test.cs" />
-    <Compile Include="DomainModels\TestBase.cs" />
     <Compile Include="DomainModels\TestComponent.cs" />
+    <Compile Include="DTOs\AnswerDTO.cs" />
+    <Compile Include="DTOs\QuestionDTO.cs" />
+    <Compile Include="DTOs\QuestionVersionDTO.cs" />
+    <Compile Include="DTOs\TestDTO.cs" />
+    <Compile Include="DTOs\TestComponentDTO.cs" />
+    <Compile Include="DTOs\TestVersionDTO.cs" />
     <Compile Include="Interfaces\Repositories\IAnswerRepository.cs" />
-    <Compile Include="Interfaces\Repositories\IQuestionBaseRepository.cs" />
     <Compile Include="Interfaces\Repositories\IQuestionRepository.cs" />
-    <Compile Include="Interfaces\Repositories\ITestBaseRepository.cs" />
     <Compile Include="Interfaces\Repositories\ITestComponentRepository.cs" />
-    <Compile Include="Interfaces\Repositories\ITestRepository.cs" />
+    <Compile Include="Interfaces\Services\IQuestionService.cs" />
     <Compile Include="Profiles\ServicesProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\QuestionService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTOs\" />
-    <Folder Include="Interfaces\Services\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

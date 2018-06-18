@@ -10,10 +10,6 @@ namespace Examiner.Core.DomainModels
     {
         public Guid Id { get; private set; }
 
-        //Navigation properties
-        public virtual string UserId { get; private set; }
-        public virtual ApplicationUser User { get; private set; }
-
         //Components properties
         public virtual ICollection<TestComponent> Components { get; set; }
         public virtual TestComponent Root { get; set; }
@@ -21,17 +17,14 @@ namespace Examiner.Core.DomainModels
         //Methods for components
         public abstract void Add(TestComponent component);
         public abstract void Remove(TestComponent component);
-
-        //Methods for Bases
         public abstract Guid GetApplicableFor();
         public abstract string GetContent();
 
         public TestComponent() { }
 
-        public TestComponent(Guid id, string userId)
+        public TestComponent(Guid id)
         {
             Id = id;
-            UserId = userId;
             Components = new List<TestComponent>();
         }
     }

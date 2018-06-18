@@ -30,6 +30,7 @@ C:\Users\pawel\source\repos\Examiner.MvcClient\Examiner.Core\obj\Debug\Examiner.
 C:\Users\pawel\source\repos\Examiner\Examiner.Core\bin\Debug\Examiner.Core.dll.config
 C:\Users\pawel\source\repos\Examiner\Examiner.Core\bin\Debug\Examiner.Core.dll
 C:\Users\pawel\source\repos\Examiner\Examiner.Core\bin\Debug\Examiner.Core.pdb
+C:\Users\pawel\source\repos\Examiner\Examiner.Core\bin\Debug\AutoMapper.dll
 C:\Users\pawel\source\repos\Examiner\Examiner.Core\bin\Debug\EntityFramework.dll
 C:\Users\pawel\source\repos\Examiner\Examiner.Core\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\pawel\source\repos\Examiner\Examiner.Core\bin\Debug\Microsoft.AspNet.Identity.Core.dll
@@ -41,6 +42,7 @@ C:\Users\pawel\source\repos\Examiner\Examiner.Core\bin\Debug\Microsoft.Owin.Secu
 C:\Users\pawel\source\repos\Examiner\Examiner.Core\bin\Debug\Microsoft.Owin.Security.OAuth.dll
 C:\Users\pawel\source\repos\Examiner\Examiner.Core\bin\Debug\Newtonsoft.Json.dll
 C:\Users\pawel\source\repos\Examiner\Examiner.Core\bin\Debug\Owin.dll
+C:\Users\pawel\source\repos\Examiner\Examiner.Core\bin\Debug\AutoMapper.xml
 C:\Users\pawel\source\repos\Examiner\Examiner.Core\bin\Debug\EntityFramework.xml
 C:\Users\pawel\source\repos\Examiner\Examiner.Core\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\pawel\source\repos\Examiner\Examiner.Core\bin\Debug\Microsoft.AspNet.Identity.Core.xml
@@ -55,6 +57,4 @@ C:\Users\pawel\source\repos\Examiner\Examiner.Core\obj\Debug\Examiner.Core.cspro
 C:\Users\pawel\source\repos\Examiner\Examiner.Core\obj\Debug\Examiner.Core.csproj.CopyComplete
 C:\Users\pawel\source\repos\Examiner\Examiner.Core\obj\Debug\Examiner.Core.dll
 C:\Users\pawel\source\repos\Examiner\Examiner.Core\obj\Debug\Examiner.Core.pdb
-C:\Users\pawel\source\repos\Examiner\Examiner.Core\bin\Debug\AutoMapper.dll
-C:\Users\pawel\source\repos\Examiner\Examiner.Core\bin\Debug\AutoMapper.xml
 C:\Users\pawel\source\repos\Examiner\Examiner.Core\obj\Debug\Examiner.Core.csprojAssemblyReference.cache

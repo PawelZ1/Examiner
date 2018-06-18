@@ -6,41 +6,45 @@ using System.Threading.Tasks;
 
 namespace Examiner.Core.DomainModels
 {
-    public class Question : TestComponent
+    public class Question
     {
-        public virtual Guid QuestionBaseId { get; private set; }
-        public virtual QuestionBase QuestionBase { get; private set; }
+        public Guid QuestionId { get; private set; }
+        public string Content { get; private set; }
+        public DateTime CreatedAt { get; private set; }
+        public DateTime UpdatedAt { get; private set; }
+
+        public Guid ApplicableFor { get; private set; }
+        public Test Test { get; private set; }
+
+        public virtual string UserId { get; private set; }
+        public virtual ApplicationUser User { get; private set; }
+
+        public virtual ICollection<QuestionVersion> QuestionVersions { get; private set; }
+        public virtual ICollection<Answer> Answers { get;  private set; }
 
         private Question() { }
 
-        public Question(Guid id, QuestionBase questionBase, string userId) : base(id, userId)
+        public Question(Guid questionId, string content, string userId, Guid applicableFor)
         {
-            QuestionBase = questionBase;
+            QuestionId = questionId;
+            SetContent(content);
+            UserId = userId;
+            ApplicableFor = applicableFor;
+            CreatedAt = DateTime.UtcNow;
+            Update();
         }
 
-        public override Guid GetApplicableFor()
+        public void SetContent(string content)
         {
-            return QuestionBase.ApplicableFor;    
+            if (string.IsNullOrWhiteSpace(content))
+                throw new ArgumentNullException("Question content canot be empty");
+
+            Content = content;
         }
 
-        public override string GetContent()
+        public void Update()
         {
-            return QuestionBase.Content;
+            UpdatedAt = DateTime.UtcNow;
         }
-
-        public override void Add(TestComponent component)
-        {
-            if (QuestionBase.QuestionBaseId == component.GetApplicableFor())
-                Components.Add(component);
-            else
-                throw new ArgumentException("Given component is not applicable for this element");
-        }
-
-        public override void Remove(TestComponent component)
-        {
-            Components.Remove(component);
-        }
-
-
     }
 }
