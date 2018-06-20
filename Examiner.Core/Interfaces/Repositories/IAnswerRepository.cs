@@ -9,6 +9,9 @@ namespace Examiner.Core.Interfaces.Repositories
 {
     public interface IAnswerRepository
     {
+        Task AddAsync(Answer answer);
+        Task<Answer> GetAsync(Guid id);
+        Task DeleteAsync(Answer answer);
         Task UpdateAsync(Answer answer);
     }
 }

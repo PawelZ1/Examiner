@@ -14,6 +14,7 @@ namespace Examiner.MvcClient.Modules
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<QuestionRepository>().As<IQuestionRepository>();
+            builder.RegisterType<AnswerRepository>().As<IAnswerRepository>();
             builder.RegisterInstance(AutoMapperConfig.Initialize()).SingleInstance();
             base.Load(builder); 
         }

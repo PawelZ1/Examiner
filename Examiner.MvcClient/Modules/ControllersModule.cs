@@ -13,6 +13,7 @@ namespace Examiner.MvcClient.Modules
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<QuestionService>().As<IQuestionService>();
+            builder.RegisterType<AnswerService>().As<IAnswerService>();
             base.Load(builder);
         }
     }

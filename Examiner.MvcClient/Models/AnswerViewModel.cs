@@ -11,6 +11,5 @@ namespace Examiner.MvcClient.Models
         public string Content { get; set; }
         public bool IsCorrect { get; set; }
         public Guid ApplicableFor { get; set; }
-        public virtual string UserId { get; set; }
     }
 }

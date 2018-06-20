@@ -42,8 +42,8 @@
                                 </span>
                             </p>
                             <p>
-                                @Html.ActionLink("Modify", "UpdateAnswer", new { id = item.Id}, new { @class="btn btn-sm btn-outline-primary"})
-                                @Html.ActionLink("Delete", "DeleteAnswer", new { id = item.Id }, new { @class="btn btn-sm btn-outline-primary"})
+                                @Html.ActionLink("Modify", "UpdateAnswer", "Answer", new { id = item.Id}, new { @class="btn btn-sm btn-outline-primary"})
+                                @Html.ActionLink("Remove", "RemoveAnswer", "Answer", new { id = item.Id}, new { @class="btn btn-sm btn-outline-danger"})
                             </p>
                         </div>
                     </div>

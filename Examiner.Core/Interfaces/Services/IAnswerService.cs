@@ -9,6 +9,8 @@ namespace Examiner.Core.Interfaces.Services
 {
     public interface IAnswerService
     {
-        Task AddAnswerAsync(AnswerDTO answer);
+        Task RemoveAnswerAsync(Guid id);
+        Task AddAnswerAsync(AnswerDTO answerDTO);
+        Task<AnswerDTO> GetAnswerAsync(Guid id);
     }
 }

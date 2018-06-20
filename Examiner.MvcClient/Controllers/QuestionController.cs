@@ -51,23 +51,6 @@ namespace Examiner.MvcClient.Controllers
             return View(model);
         }
 
-        public async Task<ActionResult> CreateAnswer(Guid id)
-        {
-            QuestionDTO question = await _questionService.GetQuestion(id);
-            if (question == null)
-                return new HttpStatusCodeResult(HttpStatusCode.NotFound);
-
-            if (GetUserId() != question.UserId)
-                return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
-
-            AnswerViewModel model = new AnswerViewModel
-            {
-                ApplicableFor = question.QuestionId
-            };
-
-            return View(model);
-        }
-
         public async Task<ActionResult> DeleteQuestion(Guid id)
         {
             QuestionDTO question = await _questionService.GetQuestion(id);

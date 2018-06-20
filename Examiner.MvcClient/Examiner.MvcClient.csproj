@@ -225,6 +225,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AccountSettingsController.cs" />
+    <Compile Include="Controllers\AnswerController.cs" />
     <Compile Include="Controllers\AuthorizationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
@@ -272,11 +273,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_SideMenu.cshtml" />
-    <Content Include="Views\TestVersion\Index.cshtml" />
     <Content Include="Views\Question\Index.cshtml" />
     <Content Include="Views\Question\GetQuestionDetails.cshtml" />
     <Content Include="Views\Question\CreateAnswer.cshtml" />
     <Content Include="Views\Question\DeleteQuestion.cshtml" />
+    <Content Include="Views\Answer\RemoveAnswer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

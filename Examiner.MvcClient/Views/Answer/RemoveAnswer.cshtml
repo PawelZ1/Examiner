@@ -1,0 +1,28 @@
+﻿@model Examiner.MvcClient.Models.AnswerViewModel
+
+@{
+    ViewBag.Title = "RemoveAnswer";
+}
+
+<div class="card">
+    <div class="card-header">
+        Answer removal confirmation
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Do you really want to delete this answer?</h4>
+        <h5 class="card-text">@Html.DisplayNameFor(p => p.Content):</h5>
+        <p class="card-text">@Html.DisplayFor(p => p.Content)</p>
+
+        @using (Html.BeginForm("RemoveAnswerConfirmed", "Answer", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken();
+
+            @Html.HiddenFor(p => p.Id)
+            @Html.HiddenFor(p => p.ApplicableFor)
+
+            @Html.ActionLink("Back to question", "GetQuestionDetails", "Question", new { id = Model.ApplicableFor}, new { @class = "btn btn-sm btn-outline-primary" })
+            <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+        }
+    </div>
+</div>
+
