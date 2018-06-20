@@ -19,23 +19,7 @@ namespace Examiner.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task AddAsync(Answer answer)
-        {
-            _context.Answers.Add(answer);
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task DeleteAsync(Answer answer)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<Answer> GetAsync(Guid id)
-        {
-            return await _context.Answers.FirstOrDefaultAsync(p => p.Id == id);
-        }
-
-        public async Task UpdateAsync(Answer answer)
+        public Task UpdateAsync(Answer answer)
         {
             throw new NotImplementedException();
         }

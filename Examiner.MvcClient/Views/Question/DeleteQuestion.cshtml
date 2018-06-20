@@ -1,0 +1,27 @@
+﻿@model Examiner.MvcClient.Models.QuestionViewModel
+
+
+@{
+    ViewBag.Title = "DeleteQuestion";
+}
+
+<div class="card">
+    <div class="card-header">
+        Question delete confirmation
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Do you really want to delete this question? This will also delete its answers.</h4>
+        <h5 class="card-text">@Html.DisplayNameFor(p => p.Content):</h5>
+        <p class="card-text">@Html.DisplayFor(p => p.Content)</p>
+
+        @using (Html.BeginForm("DeleteQuestionConfirmed", "Question", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken();
+
+            @Html.HiddenFor(p => p.QuestionId)
+
+            @Html.ActionLink("Back to questions", "Index", "Question", new { @class = "btn btn-sm btn-outline-primary" })
+            <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+        }
+    </div>
+</div>

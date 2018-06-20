@@ -9,8 +9,6 @@ namespace Examiner.MvcClient.Models
     {
         public Guid QuestionId { get; set; }
         public string Content { get; set; }
-        public Guid ApplicableFor { get; set; }
-        public string UserId { get; set; }
         public ICollection<AnswerViewModel> Answers { get; set; }
     }
 }

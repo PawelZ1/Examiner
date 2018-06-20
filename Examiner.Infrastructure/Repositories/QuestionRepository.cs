@@ -26,7 +26,8 @@ namespace Examiner.Infrastructure.Repositories
 
         public async Task DeleteAsync(Question question)
         {
-            throw new NotImplementedException();
+             _context.Questions.Remove(question);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<Question>> GetAllForUserAsync(string userId)
@@ -41,7 +42,8 @@ namespace Examiner.Infrastructure.Repositories
 
         public async Task UpdateAsync(Question question)
         {
-            throw new NotImplementedException();
+            _context.Entry(question).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
         }
     }
 }

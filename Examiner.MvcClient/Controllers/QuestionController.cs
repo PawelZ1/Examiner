@@ -40,6 +40,9 @@ namespace Examiner.MvcClient.Controllers
         public async Task<ActionResult> GetQuestionDetails(Guid id)
         {
             QuestionDTO question = await _questionService.GetQuestion(id);
+            if (question == null)
+                return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+
             if (GetUserId() !=  question.UserId)
                 return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
 
@@ -48,9 +51,45 @@ namespace Examiner.MvcClient.Controllers
             return View(model);
         }
 
-        public async Task<ActionResult> AddAnswer()
+        public async Task<ActionResult> CreateAnswer(Guid id)
         {
-            
+            QuestionDTO question = await _questionService.GetQuestion(id);
+            if (question == null)
+                return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+
+            if (GetUserId() != question.UserId)
+                return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
+
+            AnswerViewModel model = new AnswerViewModel
+            {
+                ApplicableFor = question.QuestionId
+            };
+
+            return View(model);
+        }
+
+        public async Task<ActionResult> DeleteQuestion(Guid id)
+        {
+            QuestionDTO question = await _questionService.GetQuestion(id);
+
+            if (question == null)
+                return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+
+            if (GetUserId() != question.UserId)
+                return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
+
+            var model = _mapper.Map<QuestionDTO, QuestionViewModel>(question);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> DeleteQuestionConfirmed(QuestionViewModel questionViewModel)
+        {
+            await _questionService.DeleteQuestion(questionViewModel.QuestionId);
+
+            return RedirectToAction("Index");
         }
     }
 }

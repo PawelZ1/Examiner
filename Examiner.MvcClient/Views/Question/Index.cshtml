@@ -29,34 +29,11 @@
                 <td>@item.Content</td>
                 <td>@item.NumberOfAnswers</td>
                 <td>
-                    <div class="btn-group btn-group-sm">
-                        @Html.ActionLink("Details / Modify", "GetQuestionDetails", new { id = item.QuestionId }, new { @class = "btn btn-sm btn-outline-secondary" })
-                        <button type="button" data-toggle="modal" data-target="#DeleteModal" class="btn btn-sm btn-outline-secondary">Delete</button>
-                    </div>
+                    @Html.ActionLink("Details / Modify", "GetQuestionDetails", new { id = item.QuestionId }, new { @class = "btn btn-sm btn-outline-primary" })
+                    @Html.ActionLink("Delete", "DeleteQuestion", new { id = item.QuestionId}, new {@class= "btn btn-sm btn-outline-danger" })
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
-<!-- Delete Modal -->
-<div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="Delete" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Delete question</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Do you really want to delete this question?</p>
-                <p>This will also delete its answers.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>

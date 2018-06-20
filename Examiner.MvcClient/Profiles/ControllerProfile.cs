@@ -15,6 +15,7 @@ namespace Examiner.MvcClient.Profiles
             CreateMap<QuestionDTO, QuestionForListViewModel>().ForMember(dest => dest.NumberOfAnswers, 
                 s => s.MapFrom(source => source.AnswerDTOs.Count));
             CreateMap<QuestionDTO, QuestionViewModel>().ForMember(dest => dest.Answers, s => s.MapFrom(source => source.AnswerDTOs));
+            CreateMap<QuestionViewModel, QuestionDTO>();
             CreateMap<AnswerDTO, AnswerViewModel>();
         }
     }

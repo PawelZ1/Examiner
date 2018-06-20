@@ -93,8 +93,8 @@ namespace Examiner.Infrastructure.Data
             var answers = modelBuilder.Entity<Answer>();
             answers.ToTable("Answers");
             answers.HasKey(p => p.Id);
-            answers.HasRequired(p => p.User).WithMany(p => p.Answers);
-            answers.HasRequired(p => p.Question).WithMany(p => p.Answers).HasForeignKey(p => p.ApplicableFor).WillCascadeOnDelete(false);
+            answers.HasOptional(p => p.User).WithMany(p => p.Answers);
+            answers.HasRequired(p => p.Question).WithMany(p => p.Answers).HasForeignKey(p => p.ApplicableFor);
             answers.Property(p => p.ApplicableFor).IsRequired();
             answers.Property(p => p.Content).IsRequired().HasMaxLength(5000);
             answers.Property(p => p.IsCorrect).IsRequired();

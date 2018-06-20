@@ -11,5 +11,7 @@ namespace Examiner.Core.Interfaces.Services
     {
         Task<IEnumerable<QuestionDTO>> GetUserQuestions(string userId);
         Task<QuestionDTO> GetQuestion(Guid id);
+        Task AddAnswer(AnswerDTO answerDTO, Guid id);
+        Task DeleteQuestion(Guid id);
     }
 }

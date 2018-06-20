@@ -16,7 +16,7 @@
         </p>
         <p>
             @Html.ActionLink("Modify", "UpdateQuestion", null, new { @class = "btn btn-sm btn-outline-primary" })
-            @Html.ActionLink("Add Answer", "CreateAnswer", null, new { @class = "btn btn-sm btn-outline-primary" })
+            @Html.ActionLink("Add Answer", "CreateAnswer", new { id = Model.QuestionId}, new { @class = "btn btn-sm btn-outline-primary" })
         </p>
     </div>
     <div class="card-body">

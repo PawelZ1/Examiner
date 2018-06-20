@@ -275,6 +275,8 @@
     <Content Include="Views\TestVersion\Index.cshtml" />
     <Content Include="Views\Question\Index.cshtml" />
     <Content Include="Views\Question\GetQuestionDetails.cshtml" />
+    <Content Include="Views\Question\CreateAnswer.cshtml" />
+    <Content Include="Views\Question\DeleteQuestion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -10,5 +10,7 @@ namespace Examiner.MvcClient.Models
         public Guid Id { get; set; }
         public string Content { get; set; }
         public bool IsCorrect { get; set; }
+        public Guid ApplicableFor { get; set; }
+        public virtual string UserId { get; set; }
     }
 }

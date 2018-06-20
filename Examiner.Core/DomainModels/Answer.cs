@@ -11,7 +11,7 @@ namespace Examiner.Core.DomainModels
         public string Content { get; private set; }
         public bool IsCorrect { get; private set; }
 
-        private Guid ApplicableFor;
+        public Guid ApplicableFor { get; private set; }
         public Question Question { get; set; }
 
         public virtual string UserId { get; private set; }

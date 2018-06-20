@@ -14,14 +14,27 @@ namespace Examiner.Core.Services
     public class QuestionService : IQuestionService
     {
         private readonly IQuestionRepository _questionRepository;
-        private readonly ITestComponentRepository _testComponentRepository;
         private readonly IMapper _mapper;
 
-        public QuestionService(IQuestionRepository questionRepository, ITestComponentRepository testComponentRepository, IMapper mapper)
+        public QuestionService(IQuestionRepository questionRepository, IMapper mapper)
         {
             _questionRepository = questionRepository;
-            _testComponentRepository = testComponentRepository;
             _mapper = mapper;
+        }
+
+        public Task AddAnswer(AnswerDTO answerDTO, Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task DeleteQuestion(Guid id)
+        {
+            Question question = await _questionRepository.GetAsync(id);
+
+            if (question == null)
+                throw new ArgumentException("Question with given id does not exists");
+
+            await _questionRepository.DeleteAsync(question);
         }
 
         public async Task<QuestionDTO> GetQuestion(Guid id)
